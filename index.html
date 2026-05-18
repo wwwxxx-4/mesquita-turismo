@@ -138,29 +138,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .dcard-title{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:5px;font-family:var(--f)}
 .dcard-desc{font-size:13px;color:var(--muted);line-height:1.55}
 
-/* ── AI SECTION ── */
-.ai-section{background:linear-gradient(140deg,#060D1A 0%,#0D1C3C 55%,#0A1830 100%);padding:96px 28px;position:relative;overflow:hidden}
-.ai-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-bottom:52px}
-.ai-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:30px;transition:.22s;position:relative;overflow:hidden}
-.ai-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
-.ai-card:nth-child(1)::before{background:linear-gradient(90deg,#3B82F6,#7FC3F8)}
-.ai-card:nth-child(2)::before{background:linear-gradient(90deg,#10B981,#34D399)}
-.ai-card:nth-child(3)::before{background:linear-gradient(90deg,#F97316,#FBBF24)}
-.ai-card:nth-child(4)::before{background:linear-gradient(90deg,#A855F7,#EC4899)}
-.ai-card:hover{background:rgba(255,255,255,.1);transform:translateY(-4px)}
-.ai-step{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;font-family:var(--f)}
-.ai-card:nth-child(1) .ai-step{color:#7FC3F8}
-.ai-card:nth-child(2) .ai-step{color:#34D399}
-.ai-card:nth-child(3) .ai-step{color:#FBBF24}
-.ai-card:nth-child(4) .ai-step{color:#D8B4FE}
-.ai-card-title{font-size:18px;font-weight:800;color:#fff;margin-bottom:10px;line-height:1.2;font-family:var(--f)}
-.ai-card-desc{font-size:14px;color:rgba(255,255,255,.5);line-height:1.65}
-.ai-icon{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-.ai-card:nth-child(1) .ai-icon{background:rgba(59,130,246,.18);color:#7FC3F8}
-.ai-card:nth-child(2) .ai-icon{background:rgba(16,185,129,.18);color:#34D399}
-.ai-card:nth-child(3) .ai-icon{background:rgba(249,115,22,.18);color:#FBBF24}
-.ai-card:nth-child(4) .ai-icon{background:rgba(168,85,247,.18);color:#D8B4FE}
-
 /* ── WHATSAPP GROUP ── */
 .wa-section{background:linear-gradient(135deg,#064E45 0%,#0A7065 100%);padding:72px 28px;text-align:center}
 
@@ -251,7 +228,6 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:56px 28px 28px
       <a href="#pacotes">Pacotes</a>
       <a href="#equipe">Equipe</a>
       <a href="#contato">Contato</a>
-      <a href="https://ai.mesquitaturismo.com.br" target="_blank">IA Mesquita</a>
       <a href="https://viagem.mesquitaturismo.com.br" target="_blank" class="nav-cta">A Viagem te Encontra</a>
     </div>
     <button class="nav-mob" id="nav-mob" aria-label="Menu">
@@ -353,67 +329,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:56px 28px 28px
   </div>
 </section>
 
-<!-- AI MESQUITA -->
-<section class="ai-section">
-  <div style="max-width:1120px;margin:0 auto;position:relative;z-index:1">
-    <div style="text-align:center;margin-bottom:56px">
-      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:6px 18px;font-size:11px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:18px;letter-spacing:.08em;text-transform:uppercase;font-family:var(--f)">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L13.09 8.26L20 7L14.74 12L17 19L12 15.27L7 19L9.26 12L4 7L10.91 8.26L12 2Z"/></svg>
-        Inteligência Artificial
-      </div>
-      <h2 style="font-size:clamp(28px,5vw,46px);font-weight:900;color:#fff;letter-spacing:-.025em;line-height:1.08;margin-bottom:14px;font-family:var(--f)">
-        Conheça o Assistente de IA<br><span style="color:#7FC3F8">da Mesquita Turismo</span>
-      </h2>
-      <p style="font-size:16px;color:rgba(255,255,255,.55);line-height:1.75;max-width:520px;margin:0 auto">
-        Uma IA treinada para planejar viagens completas com dados reais — voos, hotéis, atividades e pacotes — em segundos.
-      </p>
-    </div>
-    <div class="ai-cards">
-      <div class="ai-card">
-        <div class="ai-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.76 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 13.92v3"/><path d="M14.05 2a9 9 0 018 7.94"/><path d="M14.05 6A5 5 0 0118 10"/></svg>
-        </div>
-        <div class="ai-step">Passo 1</div>
-        <div class="ai-card-title">Busca voos reais com preços</div>
-        <div class="ai-card-desc">Consulta disponibilidade e preços de passagens em tempo real, comparando companhias e tarifas para encontrar a melhor opção.</div>
-      </div>
-      <div class="ai-card">
-        <div class="ai-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <div class="ai-step">Passo 2</div>
-        <div class="ai-card-title">Busca hotéis com avaliações</div>
-        <div class="ai-card-desc">Encontra hospedagens com avaliações reais, fotos e preços por noite. Filtra por categoria, localização e perfil de viagem.</div>
-      </div>
-      <div class="ai-card">
-        <div class="ai-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </div>
-        <div class="ai-step">Passo 3</div>
-        <div class="ai-card-title">Busca atividades no destino</div>
-        <div class="ai-card-desc">Sugere atrações, restaurantes, tours e experiências locais com base no seu perfil — para aproveitar cada minuto no destino.</div>
-      </div>
-      <div class="ai-card">
-        <div class="ai-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <div class="ai-step">Passo 4</div>
-        <div class="ai-card-title">Monta pacotes completos</div>
-        <div class="ai-card-desc">Combina voo + hotel + atividades num pacote personalizado, salvando tudo no sistema para que os consultores fechem o melhor negócio.</div>
-      </div>
-    </div>
-    <div style="text-align:center">
-      <a href="https://ai.mesquitaturismo.com.br" target="_blank"
-         style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--sky),var(--blue));color:#fff;font-size:16px;font-weight:700;text-decoration:none;padding:16px 40px;border-radius:100px;box-shadow:0 6px 32px rgba(59,130,246,.4);transition:.22s;font-family:var(--f)"
-         onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 10px 40px rgba(59,130,246,.5)'"
-         onmouseout="this.style.transform='';this.style.boxShadow='0 6px 32px rgba(59,130,246,.4)'">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        Experimentar o Assistente de IA
-      </a>
-      <p style="font-size:13px;color:rgba(255,255,255,.3);margin-top:16px">Gratuito · Resultados em segundos</p>
-    </div>
-  </div>
-</section>
+
 
 <!-- GRUPO WHATSAPP -->
 <section class="wa-section">
