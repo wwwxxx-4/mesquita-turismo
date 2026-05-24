@@ -212,6 +212,30 @@ a.partner-card:hover{border-color:var(--blue);box-shadow:var(--sh-md);transform:
 .partner-logo{max-height:56px;max-width:140px;width:auto;object-fit:contain;filter:grayscale(30%);transition:var(--tr)}
 a.partner-card:hover .partner-logo{filter:grayscale(0%)}
 
+/* ── SEGURO VIAGEM ── */
+.seguro-section{background:linear-gradient(140deg,#080F1E 0%,#0D3AA0 60%,#1246C8 100%);padding:96px 28px;position:relative;overflow:hidden}
+.seguro-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(75,189,232,.1),transparent);pointer-events:none}
+.seguro-inner{max-width:1120px;margin:0 auto;position:relative;z-index:1}
+.seguro-header{text-align:center;margin-bottom:56px}
+.seguro-label{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;color:rgba(255,255,255,.9);margin-bottom:18px;letter-spacing:.08em;text-transform:uppercase;font-family:var(--f)}
+.seguro-title{font-size:clamp(28px,5vw,44px);font-weight:900;color:#fff;letter-spacing:-.025em;line-height:1.08;margin-bottom:14px;font-family:var(--f)}
+.seguro-title em{font-style:normal;color:#4BBDE8}
+.seguro-sub{font-size:16px;color:rgba(255,255,255,.65);line-height:1.75;max-width:560px;margin:0 auto}
+.seguro-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:48px}
+.sgcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:24px;transition:var(--tr)}
+.sgcard:hover{background:rgba(255,255,255,.1);border-color:rgba(75,189,232,.4);transform:translateY(-3px)}
+.sgcard-ic{width:44px;height:44px;border-radius:12px;background:rgba(75,189,232,.15);border:1px solid rgba(75,189,232,.25);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:#4BBDE8}
+.sgcard-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;font-family:var(--f)}
+.sgcard-desc{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6}
+.seguro-destinos{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:36px}
+.seguro-dest-chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:600;color:rgba(255,255,255,.75);font-family:var(--f)}
+.seguro-cta-area{text-align:center}
+.seguro-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 38px;border-radius:100px;background:#4BBDE8;color:#080F1E;font-size:16px;font-weight:800;text-decoration:none;transition:var(--tr);box-shadow:0 4px 24px rgba(75,189,232,.35);font-family:var(--f)}
+.seguro-btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 6px 32px rgba(75,189,232,.4)}
+.seguro-trust{display:flex;justify-content:center;gap:28px;margin-top:28px;flex-wrap:wrap}
+.seguro-trust-item{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.5);font-family:var(--f)}
+.seguro-trust-item svg{color:#4BBDE8}
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 .fade-up{animation:fadeUp .6s ease both}
@@ -241,6 +265,7 @@ a.partner-card:hover .partner-logo{filter:grayscale(0%)}
       <a href="#pacotes">Pacotes</a>
       <a href="#equipe">Equipe</a>
       <a href="#contato">Contato</a>
+      <a href="#seguro" style="color:var(--blue);font-weight:700">🛡️ Seguro Viagem</a>
       <a href="https://viagem.mesquitaturismo.com.br" target="_blank" class="nav-cta">A Viagem te Encontra</a>
     </div>
     <button class="nav-mob" id="nav-mob" aria-label="Menu">
@@ -567,6 +592,105 @@ a.partner-card:hover .partner-logo{filter:grayscale(0%)}
     </div>
   </div>
 </div>
+
+<!-- SEGURO VIAGEM -->
+<section id="seguro" class="seguro-section">
+  <div class="seguro-inner">
+
+    <div class="seguro-header">
+      <div class="seguro-label">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Intermac Seguros · Parceiro Oficial
+      </div>
+      <h2 class="seguro-title">Seguro Viagem <em>sem complicação</em></h2>
+      <p class="seguro-sub">Cote agora, pague com Mercado Pago e receba seu voucher na hora. Coberturas Intermac para todos os destinos, com câmbio ao vivo.</p>
+    </div>
+
+    <!-- Cards de benefícios -->
+    <div class="seguro-cards">
+      <div class="sgcard">
+        <div class="sgcard-ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div class="sgcard-title">Câmbio ao Vivo</div>
+        <div class="sgcard-desc">Preço sempre atualizado com o dólar do dia. Sem surpresas na hora de contratar.</div>
+      </div>
+      <div class="sgcard">
+        <div class="sgcard-ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <div class="sgcard-title">Pague em até 12x</div>
+        <div class="sgcard-desc">Parcelamento via Mercado Pago no cartão de crédito, sem burocracia.</div>
+      </div>
+      <div class="sgcard">
+        <div class="sgcard-ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="sgcard-title">Voucher Imediato</div>
+        <div class="sgcard-desc">Receba o voucher provisório logo após o pagamento. Apólice Intermac em até 24h úteis.</div>
+      </div>
+      <div class="sgcard">
+        <div class="sgcard-ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <div class="sgcard-title">5 Destinos</div>
+        <div class="sgcard-desc">Europa, EUA/Canadá, América Latina, Demais Países e Nacional. Cobertura até US$ 500.000.</div>
+      </div>
+      <div class="sgcard">
+        <div class="sgcard-ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="sgcard-title">Cobertura COVID-19</div>
+        <div class="sgcard-desc">Proteção integral COVID-19, telemedicina, gestação até semana 28 e doenças pré-existentes.</div>
+      </div>
+      <div class="sgcard">
+        <div class="sgcard-ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="sgcard-title">Perfil Lazer ou Corporativo</div>
+        <div class="sgcard-desc">Planos para viagens de lazer e cobertura corporativa. Limite de idade até 85 anos.</div>
+      </div>
+    </div>
+
+    <!-- Destinos chips -->
+    <div class="seguro-destinos">
+      <span class="seguro-dest-chip">🇺🇸 EUA e Canadá</span>
+      <span class="seguro-dest-chip">🇪🇺 Europa</span>
+      <span class="seguro-dest-chip">🌎 América Latina</span>
+      <span class="seguro-dest-chip">🌍 Demais Países</span>
+      <span class="seguro-dest-chip">🇧🇷 Nacional</span>
+    </div>
+
+    <!-- CTA -->
+    <div class="seguro-cta-area">
+      <a href="https://seguros.mesquitaturismo.com.br" target="_blank" class="seguro-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Cotar Seguro Agora
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <div class="seguro-trust">
+        <div class="seguro-trust-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Seguro emitido pela Intermac Seguros
+        </div>
+        <div class="seguro-trust-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Pagamento seguro via Mercado Pago
+        </div>
+        <div class="seguro-trust-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Voucher provisório imediato
+        </div>
+        <div class="seguro-trust-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          CNPJ 22.114.950/0001-80
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- EQUIPE -->
 <section id="equipe" class="section">
