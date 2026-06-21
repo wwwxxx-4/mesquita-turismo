@@ -1,1 +1,8 @@
-{"name":"mesquita-turismo","version":"1.0.0","license":"MIT"}
+{
+  "name": "mesquita-turismo",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build-pacotes.mjs"
+  }
+}
