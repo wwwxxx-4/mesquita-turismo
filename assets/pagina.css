@@ -1,0 +1,82 @@
+/* Estilo das páginas de conteúdo. Tokens iguais aos da home (index.html). */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1246C8; --blue-dk:#0D3AA0; --blue-lt:#EBF1FF; --sky:#3B82F6;
+  --dark:#080F1E; --mid:#2C3A52; --muted:#5A6880; --light:#8C99B0;
+  --border:#DDE3EE; --bg:#F5F7FB; --white:#fff;
+  --wrap:760px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  color:var(--mid); background:var(--white); line-height:1.7; font-size:17px;
+}
+h1,h2,h3,.h{font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--dark);line-height:1.25}
+h1{font-size:clamp(28px,5vw,42px);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+h2{font-size:clamp(22px,3.6vw,30px);font-weight:700;letter-spacing:-.01em;margin:44px 0 14px}
+h3{font-size:19px;font-weight:700;margin:28px 0 8px}
+p{margin-bottom:16px}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+strong{color:var(--dark);font-weight:600}
+
+/* topo */
+.top{border-bottom:1px solid var(--border);background:var(--white);position:sticky;top:0;z-index:20}
+.top .in{max-width:var(--wrap);margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.top img{width:152px;height:38px;display:block}
+.top .zap{
+  background:var(--blue);color:var(--white);font-weight:600;font-size:14px;
+  padding:9px 16px;border-radius:999px;white-space:nowrap
+}
+.top .zap:hover{background:var(--blue-dk);text-decoration:none}
+
+/* corpo */
+main{max-width:var(--wrap);margin:0 auto;padding:34px 20px 60px}
+.crumb{font-size:13px;color:var(--light);margin-bottom:22px}
+.crumb a{color:var(--light)}
+.lead{font-size:19px;color:var(--mid)}
+.lead strong{color:var(--dark)}
+
+ul,ol{margin:0 0 18px 22px}
+li{margin-bottom:9px}
+
+.box{background:var(--blue-lt);border:1px solid #D6E2FF;border-radius:14px;padding:20px 22px;margin:26px 0}
+.box p:last-child{margin-bottom:0}
+.aviso{background:#FFF8E8;border:1px solid #F0DCA8;border-radius:14px;padding:18px 20px;margin:26px 0;font-size:15.5px}
+.aviso p:last-child{margin-bottom:0}
+
+table{width:100%;border-collapse:collapse;margin:22px 0;font-size:15.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--border);padding:11px 13px;text-align:left;vertical-align:top}
+th{background:var(--bg);font-weight:700;color:var(--dark);font-family:'Plus Jakarta Sans',sans-serif}
+
+.faq{border-top:1px solid var(--border);margin-top:14px}
+.faq .q{border-bottom:1px solid var(--border);padding:18px 0}
+.faq .q h3{margin:0 0 6px}
+.faq .q p:last-child{margin-bottom:0}
+
+.cta{
+  background:var(--dark);border-radius:16px;padding:28px 26px;margin:42px 0 10px;color:#C9D3E6
+}
+.cta h2{color:var(--white);margin:0 0 10px;font-size:23px}
+.cta p{margin-bottom:18px}
+.cta a{
+  display:inline-block;background:#25D366;color:#06261A;font-weight:700;
+  padding:13px 24px;border-radius:999px
+}
+.cta a:hover{text-decoration:none;filter:brightness(1.05)}
+
+.veja{background:var(--bg);border-radius:14px;padding:20px 22px;margin:34px 0}
+.veja h2{margin:0 0 10px;font-size:18px}
+.veja ul{margin-bottom:0}
+
+/* rodape */
+footer{border-top:1px solid var(--border);background:var(--bg);margin-top:40px}
+footer .in{max-width:var(--wrap);margin:0 auto;padding:30px 20px;font-size:14px;color:var(--muted)}
+footer p{margin-bottom:8px}
+footer a{color:var(--muted);text-decoration:underline}
+
+@media(max-width:600px){
+  body{font-size:16px}
+  main{padding:24px 18px 44px}
+  .top .in{padding:12px 18px}
+}

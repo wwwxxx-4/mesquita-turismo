@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" style="width:100%;height:100%">
+  <!-- MESQUITA in sky blue -->
+  <text x="20" y="38" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="26" letter-spacing="1" fill="#4BBDE8">MESQUITA</text>
+  <!-- TURISMO in dark blue -->
+  <text x="175" y="38" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="26" letter-spacing="1" fill="#0873B7">TURISMO</text>
+  <!-- Wave 1 - dark blue -->
+  <path d="M20 52 Q80 38 140 52 Q200 66 280 48" stroke="#0873B7" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Wave 2 - light blue -->
+  <path d="M20 60 Q80 46 140 60 Q200 74 280 56" stroke="#4BBDE8" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+</svg>

@@ -5,7 +5,7 @@
 ## Sobre
 
 - [Quem Somos](https://www.mesquitaturismo.com.br/#sobre): 10 anos de excelência em turismo corporativo, consultor dedicado por empresa, sede em São Bernardo do Campo (SP) e Goiânia (GO).
-- [Nossa Equipe](https://www.mesquitaturismo.com.br/#equipe): consultores Mesquita, Bruno e Amilcar, contato direto via WhatsApp.
+- [Nossa Equipe](https://www.mesquitaturismo.com.br/#equipe): consultores Mesquita e Bruno, contato direto via WhatsApp.
 - [Perguntas Frequentes](https://www.mesquitaturismo.com.br/#faq): respostas sobre reservas, pagamento, seguro viagem e atendimento.
 
 ## Serviços
@@ -23,6 +23,12 @@
 ## Pacotes Personalizados
 
 - [A Viagem te Encontra](https://viagem.mesquitaturismo.com.br/): ferramenta de curadoria de pacotes por perfil de viagem (curtidas em destinos + quiz).
+
+## Guias e conteudo
+
+- [Passagem aerea de ultima hora](https://www.mesquitaturismo.com.br/passagem-aerea-ultima-hora/): o que da para reduzir numa compra de urgencia, quando nao da, e como pedir cotacao. Especialidade declarada da agencia em voo nacional ida e volta.
+- [Pacote com fretamento](https://www.mesquitaturismo.com.br/pacote-com-fretamento/): o que e voo fretado, comparacao com voo regular, o que vem incluso e quais regras de remarcacao mudam.
+- [Agencia de viagens em Sao Bernardo do Campo e ABC](https://www.mesquitaturismo.com.br/agencia-de-viagens-sao-bernardo-do-campo/): atendimento presencial e remoto no ABC paulista, comparacao entre Congonhas, Guarulhos e Viracopos para quem sai da regiao.
 
 ## Contato
 
