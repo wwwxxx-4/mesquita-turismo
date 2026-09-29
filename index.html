@@ -348,9 +348,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .nav-links.open{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 28px 28px;gap:4px;box-shadow:var(--sh-md)}
 .nav-links.open a{width:100%}
 
-/* ── VIDEO BANNER ── */
-.video-banner{width:100%;position:relative;padding-bottom:45%;line-height:0;overflow:hidden}
-@media(max-width:768px){.video-banner{padding-bottom:60%;margin-top:12px}}
+/* ── VIDEO SECTION ── */
+.videos-section{background:#0d1a36;padding:80px 20px}
+.videos-inner{max-width:1200px;margin:0 auto}
+.videos-header{text-align:center;margin-bottom:40px}
+.videos-header p{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin:0 0 10px}
+.videos-header h2{font-size:clamp(24px,3.5vw,36px);font-weight:900;color:#fff;margin:0}
+.videos-grid{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+.video-landscape{flex:2;min-width:280px}
+.video-portrait{flex:1;min-width:180px;max-width:280px;margin:0 auto}
+.videos-grid video{width:100%;border-radius:14px;display:block;box-shadow:0 8px 48px rgba(0,0,0,.45)}
+@media(max-width:700px){.videos-grid{flex-direction:column}.video-portrait{max-width:100%}}
 
 /* ── HERO ── */
 .hero{padding:130px 28px 90px;text-align:center;background:linear-gradient(160deg,var(--white) 0%,#EBF1FF 55%,var(--white) 100%);position:relative;overflow:hidden}
@@ -580,18 +588,6 @@ a.partner-card:hover .partner-logo{filter:grayscale(0%)}
   </div>
 </nav>
 
-<!-- VIDEO BANNER -->
-<div class="video-banner">
-  <iframe
-    src="https://www.youtube.com/embed/T3mu07NipY4?autoplay=1&mute=1&loop=1&playlist=T3mu07NipY4&rel=0&controls=0&modestbranding=1"
-    title="Mesquita Turismo"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-    style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;min-width:100%;min-height:100%">
-  </iframe>
-</div>
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-label">
@@ -619,6 +615,28 @@ a.partner-card:hover .partner-logo{filter:grayscale(0%)}
     <div class="hstat"><div class="hstat-n">11k+</div><div class="hstat-l">Viajantes atendidos</div></div>
     <div class="hstat"><div class="hstat-n">62+</div><div class="hstat-l">Companhias aéreas</div></div>
     <div class="hstat"><div class="hstat-n" style="color:var(--green)">0</div><div class="hstat-l">Reclamações</div></div>
+  </div>
+</section>
+
+<!-- VÍDEOS -->
+<section class="videos-section">
+  <div class="videos-inner">
+    <div class="videos-header">
+      <p>Quem somos</p>
+      <h2>Conheça a Mesquita Turismo</h2>
+    </div>
+    <div class="videos-grid">
+      <div class="video-landscape">
+        <video controls playsinline preload="metadata">
+          <source src="/video-promo-web.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-portrait">
+        <video controls playsinline preload="metadata">
+          <source src="/mt-final-web.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
   </div>
 </section>
 
