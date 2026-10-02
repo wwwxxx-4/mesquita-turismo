@@ -1,0 +1,41 @@
+/* ════════════════════════════════════════════════════════════════════
+   IDENTIDADE VISUAL · MESQUITA TURISMO — FONTE ÚNICA
+
+   Todas as páginas do site leem as cores e fontes daqui. Para mudar a
+   paleta do site inteiro, mude SÓ este arquivo.
+
+   Lógica da paleta: as cores vêm do logo (dois azuis). O ouro é só para
+   destaque de preço; o verde é só para economia e para o WhatsApp.
+   Tema claro de propósito: é a página da marca, igual em qualquer aparelho.
+
+   Fontes (carregadas por <link> no <head> de cada página, pela performance):
+   https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap
+
+   Cópia fora deste site: a proposta do cliente (cotacao.mesquitaturismo.com.br)
+   repete estes valores no fim de src/styles.css, bloco "TEMA MESQUITA".
+   Se mudar aqui, atualize lá também.
+   ════════════════════════════════════════════════════════════════════ */
+:root {
+  --azul: #1072B9;        /* azul escuro do logo — ações, preços, links */
+  --azul-escuro: #0D5F9C; /* hover dos botões azuis */
+  --azul-claro: #55B5E5;  /* azul claro do logo — detalhes */
+  --azul-bg: #EAF5FC;     /* fundo azulado de selos e faixas */
+  --azul-borda: #CFE4F4;  /* borda de caixas e selos azulados */
+  --noite: #0B2440;       /* títulos */
+  --papel: #F5F8FB;       /* fundo da página */
+  --folha: #FFFFFF;       /* cards */
+  --tinta: #10233B;       /* texto */
+  --tinta-2: #55657C;     /* texto secundário */
+  --tinta-3: #8496AB;     /* texto terciário (legendas) */
+  --linha: #DCE5EE;       /* bordas */
+  --ouro: #E8A600;        /* destaque de preço */
+  --verde: #138A55;       /* economia */
+  --verde-bg: #E3F5EC;
+  --verde-borda: #C3E6D3;
+  --alerta: #C2410C;      /* urgência ("últimos lugares") */
+  --alerta-bg: #FFF1E6;
+  --cta: #1FAF38;         /* botões de WhatsApp */
+  --cond: 'Barlow Condensed', 'Arial Narrow', sans-serif;  /* títulos */
+  --txt: 'Barlow', 'Segoe UI', system-ui, sans-serif;       /* texto */
+  color-scheme: light;
+}
