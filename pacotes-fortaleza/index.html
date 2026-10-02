@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pacotes para Fortaleza · Mesquita Turismo</title>
+<meta name="description" content="Pacotes para Fortaleza com aéreo e hotel, mais baratos que montar a viagem sozinho. Preço por pessoa em apartamento duplo, com taxas.">
+<meta property="og:title" content="Pacotes para Fortaleza mais baratos que montar sozinho · Mesquita Turismo">
+<meta property="og:description" content="Aéreo + hotel saindo de várias cidades, com preço por pessoa e já com as taxas.">
+<meta property="og:image" content="https://www.mesquitaturismo.com.br/pacotes-fortaleza/fotos/fortaleza.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.mesquitaturismo.com.br/pacotes-fortaleza/">
+<link rel="canonical" href="https://www.mesquitaturismo.com.br/pacotes-fortaleza/">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap">
+<style>
+/* Vitrine publica de passagens. Cores do logo (dois azuis); o amarelo-ouro
+   e so do preco; verde e so da economia. Um tema claro, de proposito: e a
+   pagina da marca, igual em qualquer aparelho. */
+:root {
+  --azul: #1072B9; --azul-claro: #55B5E5; --azul-bg: #EAF5FC; --noite: #0B2440;
+  --papel: #F5F8FB; --folha: #FFFFFF; --tinta: #10233B; --tinta-2: #55657C; --linha: #DCE5EE;
+  --ouro: #E8A600; --verde: #138A55; --verde-bg: #E3F5EC; --alerta: #C2410C; --alerta-bg: #FFF1E6;
+  --cond: 'Barlow Condensed', 'Arial Narrow', sans-serif; --txt: 'Barlow', 'Segoe UI', system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 16px/1.5 var(--txt); }
+a { color: inherit; }
+.tab { font-variant-numeric: tabular-nums; }
+.topo { position: sticky; top: 0; z-index: 10; background: var(--folha); border-bottom: 1px solid var(--linha); padding: calc(env(safe-area-inset-top, 0px) + 10px) 16px 10px; }
+.topo .in { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.topo img { height: 44px; display: block; }
+.atendentes { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.btn-whats { display: inline-flex; align-items: center; gap: 8px; background: #1FAF38; color: #fff; text-decoration: none; font-weight: 700; border-radius: 999px; padding: 8px 14px; white-space: nowrap; font-size: 15px; }
+.btn-whats small { font-weight: 500; opacity: .92; }
+.btn-whats svg { width: 18px; height: 18px; fill: currentColor; }
+.pagina { max-width: 1160px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 48px; }
+.hero h1 { font: 800 clamp(34px, 6vw, 58px)/1 var(--cond); margin: 0; text-wrap: balance; color: var(--noite); }
+.hero h1 em { font-style: normal; color: var(--azul); }
+.hero p { color: var(--tinta-2); margin: 10px 0 0; max-width: 70ch; }
+.filtros { display: grid; gap: 10px; margin-top: 22px; }
+.linha-f { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.linha-f > span { font: 700 13px var(--cond); letter-spacing: .12em; text-transform: uppercase; color: var(--tinta-2); margin-right: 4px; }
+.chip { border: 1px solid var(--linha); background: var(--folha); color: var(--tinta); border-radius: 999px; padding: 6px 13px; font: 500 14px var(--txt); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--azul); border-color: var(--azul); color: #fff; }
+select.chip { padding-right: 10px; }
+.contagem { color: var(--tinta-2); font-size: 14px; }
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 16px; margin-top: 18px; }
+.card { background: var(--folha); border: 1px solid var(--linha); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.foto { position: relative; aspect-ratio: 16 / 9; background: var(--azul-bg); max-width: 100%; }
+.foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.foto .leg { position: absolute; left: 10px; bottom: 10px; background: rgba(0, 0, 0, .55); color: #fff; font-size: 12px; border-radius: 999px; padding: 3px 10px; }
+.foto .ult { position: absolute; right: 10px; top: 10px; background: var(--alerta); color: #fff; font: 700 13px var(--cond); letter-spacing: .06em; text-transform: uppercase; border-radius: 6px; padding: 4px 8px; }
+.corpo { padding: 14px 16px 16px; display: grid; gap: 10px; flex: 1; }
+.corpo h2 { font: 800 30px/1 var(--cond); margin: 0; color: var(--noite); }
+.rota { color: var(--tinta-2); font-size: 14px; }
+.voo { font-size: 14px; display: grid; gap: 2px; }
+.voo b { font-weight: 600; }
+.precos { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; flex-wrap: wrap; border-top: 1px dashed var(--linha); padding-top: 10px; margin-top: auto; }
+.google { font-size: 13px; color: var(--tinta-2); }
+.google s { font-weight: 600; text-decoration-color: #E1483B; text-decoration-thickness: 2px; }
+.google .q { display: block; font-size: 12px; }
+.preco { font: 800 40px/1 var(--cond); color: var(--azul); }
+.preco small { font-size: 20px; margin-right: 3px; }
+.det { font-size: 12px; color: var(--tinta-2); }
+.parc { font-size: 13px; color: var(--tinta); margin-top: 3px; }
+.parc b { font-weight: 700; }
+.eco { background: var(--verde-bg); color: var(--verde); font: 700 15px var(--txt); border-radius: 999px; padding: 6px 12px; white-space: nowrap; }
+.quero-rot { font: 700 13px var(--cond); letter-spacing: .1em; text-transform: uppercase; color: var(--tinta-2); text-align: center; }
+.quero { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+.quero a { display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; background: var(--azul); color: #fff; font-weight: 700; border-radius: 10px; padding: 10px 8px; }
+.quero a:hover { background: var(--noite); }
+.quero svg { width: 16px; height: 16px; fill: currentColor; flex: none; }
+.vazio { padding: 32px; text-align: center; color: var(--tinta-2); }
+.rodape { margin-top: 36px; border-top: 1px solid var(--linha); padding-top: 16px; color: var(--tinta-2); font-size: 13px; display: grid; gap: 8px; max-width: 90ch; }
+.rodape details summary { cursor: pointer; }
+.rodape ul { margin: 6px 0 0; padding-left: 18px; }
+@media (max-width: 560px) { .topo img { height: 30px; } .btn-whats small { display: none; } .btn-whats { padding: 7px 11px; font-size: 14px; } }
+</style>
+</head>
+<body>
+<header class="topo"><div class="in">
+  <a href="/" title="Página inicial da Mesquita Turismo"><img src="/pacotes-fortaleza/logo.png" alt="Mesquita Turismo"></a>
+  <div class="atendentes" id="atendentes"></div>
+</div></header>
+
+<main class="pagina">
+  <section class="hero">
+    <h1>Pacotes para Fortaleza <em>mais baratos que montar sozinho</em></h1>
+    <p id="sub"></p>
+  </section>
+
+  <div class="filtros">
+    <div class="linha-f" id="f-origem"><span>Saindo de</span></div>
+    <div class="linha-f" id="f-mes"><span>Mês</span></div>
+    <div class="linha-f" id="f-hotel"><span>Hotel</span></div>
+    <div class="linha-f"><span>Ordem</span>
+      <select class="chip" id="ordem" aria-label="Ordenar">
+        <option value="destaque">Destaques</option>
+        <option value="economia">Maior economia</option>
+        <option value="preco">Menor preço</option>
+        <option value="data">Data da viagem</option>
+      </select>
+      <span class="contagem tab" id="contagem" style="margin-left:auto"></span>
+    </div>
+  </div>
+
+  <div class="grade" id="grade"></div>
+  <div class="vazio" id="vazio" hidden>Nenhum pacote com esses filtros.</div>
+
+  <footer class="rodape" id="rodape"></footer>
+</main>
+
+<script>
+const DADOS = {"consultado":"02/10/2026","ofertas":[{"origem":"VCP","cidade":"Campinas","ida":"2026-11-19","volta":"2026-11-26","noites":7,"lugares":20,"prazo":"2026-11-13","hotel":"Carmel Magna Praia Hotel","regime":"Café da manhã","cia":"GOL","idaSai":"05:00","idaChega":"11:10","voltaSai":"17:20","voltaChega":"22:55","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":4339,"montar":5242,"googleVoo":1573,"hotelPorPessoa":3669,"economia":903,"economiaPct":17},{"origem":"BSB","cidade":"Brasília","ida":"2027-01-17","volta":"2027-01-24","noites":7,"lugares":2,"prazo":"2026-11-25","hotel":"Carmel Magna Praia Hotel","regime":"Café da manhã","cia":"LATAM","idaSai":"10:40","idaChega":"13:15","voltaSai":"14:10","voltaChega":"16:50","idaTipo":"Direto","voltaTipo":"Direto","preco":4389,"montar":5200,"googleVoo":2566,"hotelPorPessoa":2634,"economia":811,"economiaPct":16},{"origem":"RAO","cidade":"Ribeirão Preto","ida":"2026-11-18","volta":"2026-11-25","noites":7,"lugares":6,"prazo":"2026-11-12","hotel":"Carmel Magna Praia Hotel","regime":"Café da manhã","cia":"GOL","idaSai":"06:40","idaChega":"12:00","voltaSai":"18:00","voltaChega":"23:45","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":4439,"montar":5190,"googleVoo":1507,"hotelPorPessoa":3683,"economia":751,"economiaPct":14},{"origem":"VCP","cidade":"Campinas","ida":"2026-11-18","volta":"2026-11-23","noites":5,"lugares":12,"prazo":"2026-11-13","hotel":"Carmel Magna Praia Hotel","regime":"Café da manhã","cia":"GOL","idaSai":"05:00","idaChega":"11:10","voltaSai":"17:20","voltaChega":"22:55","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3609,"montar":4443,"googleVoo":1674,"hotelPorPessoa":2769,"economia":834,"economiaPct":19},{"origem":"BSB","cidade":"Brasília","ida":"2026-11-09","volta":"2026-11-16","noites":7,"lugares":3,"prazo":"2026-11-03","hotel":"Villa Mayor","regime":"Café da manhã incluído, Wi-Fi grátis","cia":"LATAM","idaSai":"10:50","idaChega":"13:25","voltaSai":"10:20","voltaChega":"13:00","idaTipo":"Direto","voltaTipo":"Direto","preco":3819,"montar":4629,"googleVoo":1537,"hotelPorPessoa":3092,"economia":810,"economiaPct":17},{"origem":"BSB","cidade":"Brasília","ida":"2027-01-16","volta":"2027-01-23","noites":7,"lugares":3,"prazo":"2026-11-24","hotel":"Carmel Magna Praia Hotel","regime":"Café da manhã","cia":"LATAM","idaSai":"10:20","idaChega":"12:50","voltaSai":"10:20","voltaChega":"13:00","idaTipo":"Direto","voltaTipo":"Direto","preco":4279,"montar":4985,"googleVoo":2340,"hotelPorPessoa":2645,"economia":706,"economiaPct":14},{"origem":"GYN","cidade":"Goiânia","ida":"2026-11-10","volta":"2026-11-17","noites":7,"lugares":5,"prazo":"2026-11-06","hotel":"Villa Mayor","regime":"Café da manhã incluído, Wi-Fi grátis","cia":"GOL","idaSai":"10:45","idaChega":"16:35","voltaSai":"21:05","voltaChega":"02:00","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3919,"montar":4658,"googleVoo":1566,"hotelPorPessoa":3092,"economia":739,"economiaPct":16},{"origem":"NVT","cidade":"Navegantes","ida":"2026-11-24","volta":"2026-12-01","noites":7,"lugares":6,"prazo":"2026-11-20","hotel":"Villa Mayor","regime":"Café da manhã incluído, Wi-Fi grátis","cia":"GOL","idaSai":"10:55","idaChega":"16:35","voltaSai":"11:55","voltaChega":"17:35","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3819,"montar":4551,"googleVoo":1674,"hotelPorPessoa":2877,"economia":732,"economiaPct":16},{"origem":"BSB","cidade":"Brasília","ida":"2026-11-27","volta":"2026-12-04","noites":7,"lugares":2,"prazo":"2026-11-16","hotel":"Villa Mayor","regime":"Café da manhã incluído, Wi-Fi grátis","cia":"LATAM","idaSai":"10:50","idaChega":"13:25","voltaSai":"17:05","voltaChega":"19:50","idaTipo":"Direto","voltaTipo":"Direto","preco":3649,"montar":4389,"googleVoo":1337,"hotelPorPessoa":3052,"economia":740,"economiaPct":17},{"origem":"LDB","cidade":"Londrina","ida":"2026-11-21","volta":"2026-11-28","noites":7,"lugares":2,"prazo":"2026-11-16","hotel":"Villa Mayor","regime":"Café da manhã incluído, Wi-Fi grátis","cia":"LATAM","idaSai":"10:25","idaChega":"16:50","voltaSai":"01:20","voltaChega":"09:45","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3929,"montar":4608,"googleVoo":1608,"hotelPorPessoa":3000,"economia":679,"economiaPct":15},{"origem":"VCP","cidade":"Campinas","ida":"2026-11-04","volta":"2026-11-11","noites":7,"lugares":10,"prazo":"2026-10-30","hotel":"Villa Mayor","regime":"Café da Manhã Incluso","cia":"GOL","idaSai":"05:00","idaChega":"13:10","voltaSai":"17:20","voltaChega":"22:55","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":4219,"montar":4828,"googleVoo":1287,"hotelPorPessoa":3541,"economia":609,"economiaPct":13},{"origem":"NVT","cidade":"Navegantes","ida":"2026-11-24","volta":"2026-12-01","noites":7,"lugares":6,"prazo":"2026-11-20","hotel":"Carmel Magna Praia Hotel","regime":"Café da manhã","cia":"GOL","idaSai":"10:55","idaChega":"16:35","voltaSai":"11:55","voltaChega":"17:35","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3779,"montar":4411,"googleVoo":1674,"hotelPorPessoa":2737,"economia":632,"economiaPct":14},{"origem":"VCP","cidade":"Campinas","ida":"2026-11-12","volta":"2026-11-18","noites":6,"lugares":10,"prazo":"2026-11-06","hotel":"Villa Mayor","regime":"Café da manhã incluído, Wi-Fi grátis","cia":"GOL","idaSai":"05:00","idaChega":"13:10","voltaSai":"17:20","voltaChega":"22:55","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3289,"montar":3995,"googleVoo":1258,"hotelPorPessoa":2737,"economia":706,"economiaPct":18},{"origem":"CNF","cidade":"Belo Horizonte","ida":"2026-11-10","volta":"2026-11-16","noites":6,"lugares":8,"prazo":"2026-11-06","hotel":"Villa Mayor","regime":"Café da manhã incluído, Wi-Fi grátis","cia":"GOL","idaSai":"06:20","idaChega":"11:10","voltaSai":"12:50","voltaChega":"18:30","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3519,"montar":4178,"googleVoo":1505,"hotelPorPessoa":2673,"economia":659,"economiaPct":16},{"origem":"LDB","cidade":"Londrina","ida":"2026-11-21","volta":"2026-11-28","noites":7,"lugares":2,"prazo":"2026-11-16","hotel":"Carmel Magna Praia Hotel","regime":"Café da manhã","cia":"LATAM","idaSai":"10:25","idaChega":"16:50","voltaSai":"01:20","voltaChega":"09:45","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3859,"montar":4430,"googleVoo":1608,"hotelPorPessoa":2822,"economia":571,"economiaPct":13},{"origem":"GIG","cidade":"Rio de Janeiro","ida":"2026-11-21","volta":"2026-11-28","noites":7,"lugares":6,"prazo":"2026-11-16","hotel":"Villa Mayor","regime":"Café da manhã incluído, Wi-Fi grátis","cia":"LATAM","idaSai":"05:10","idaChega":"08:20","voltaSai":"21:30","voltaChega":"00:50","idaTipo":"Direto","voltaTipo":"Direto","preco":3769,"montar":4326,"googleVoo":1326,"hotelPorPessoa":3000,"economia":557,"economiaPct":13},{"origem":"GRU","cidade":"São Paulo","ida":"2026-11-13","volta":"2026-11-20","noites":7,"lugares":41,"prazo":"2026-11-09","hotel":"Carmel Magna Praia Hotel","regime":"Café da manhã","cia":"GOL","idaSai":"08:40","idaChega":"12:05","voltaSai":"17:45","voltaChega":"21:30","idaTipo":"Direto","voltaTipo":"Direto","preco":3749,"montar":4253,"googleVoo":1359,"hotelPorPessoa":2894,"economia":504,"economiaPct":12},{"origem":"GIG","cidade":"Rio de Janeiro","ida":"2026-11-18","volta":"2026-11-24","noites":6,"lugares":10,"prazo":"2026-11-12","hotel":"Carmel Magna Praia Hotel","regime":"Café da manhã","cia":"LATAM","idaSai":"05:10","idaChega":"08:20","voltaSai":"21:30","voltaChega":"00:50","idaTipo":"Direto","voltaTipo":"Direto","preco":4019,"montar":4487,"googleVoo":1265,"hotelPorPessoa":3222,"economia":468,"economiaPct":10},{"origem":"GYN","cidade":"Goiânia","ida":"2027-01-13","volta":"2027-01-20","noites":7,"lugares":3,"prazo":"2026-11-11","hotel":"Villa Mayor","regime":"Café da manhã incluído, Wi-Fi grátis","cia":"GOL","idaSai":"11:30","idaChega":"16:20","voltaSai":"11:55","voltaChega":"16:50","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3909,"montar":4354,"googleVoo":1513,"hotelPorPessoa":2841,"economia":445,"economiaPct":10},{"origem":"GRU","cidade":"São Paulo","ida":"2026-12-08","volta":"2026-12-15","noites":7,"lugares":6,"prazo":"2026-10-09","hotel":"Carmel Magna Praia Hotel","regime":"Breakfast","cia":"GOL","idaSai":"08:40","idaChega":"12:05","voltaSai":"17:45","voltaChega":"21:30","idaTipo":"Direto","voltaTipo":"Direto","preco":3539,"montar":3981,"googleVoo":1905,"hotelPorPessoa":2076,"economia":442,"economiaPct":11},{"origem":"LDB","cidade":"Londrina","ida":"2026-11-24","volta":"2026-11-29","noites":5,"lugares":8,"prazo":"2026-11-18","hotel":"Carmel Magna Praia Hotel","regime":"Café da manhã","cia":"LATAM","idaSai":"10:25","idaChega":"16:50","voltaSai":"03:20","voltaChega":"09:45","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3229,"montar":3692,"googleVoo":1721,"hotelPorPessoa":1971,"economia":463,"economiaPct":13},{"origem":"CNF","cidade":"Belo Horizonte","ida":"2026-11-11","volta":"2026-11-16","noites":5,"lugares":5,"prazo":"2026-11-06","hotel":"Villa Mayor","regime":"Café da manhã incluído, Wi-Fi grátis","cia":"GOL","idaSai":"06:00","idaChega":"11:15","voltaSai":"12:15","voltaChega":"16:50","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3029,"montar":3530,"googleVoo":1277,"hotelPorPessoa":2253,"economia":501,"economiaPct":14},{"origem":"GRU","cidade":"São Paulo","ida":"2026-12-08","volta":"2026-12-15","noites":7,"lugares":6,"prazo":"2026-10-09","hotel":"Villa Mayor","regime":"Café da Manhã Incluso","cia":"GOL","idaSai":"08:40","idaChega":"12:05","voltaSai":"17:45","voltaChega":"21:30","idaTipo":"Direto","voltaTipo":"Direto","preco":3119,"montar":3568,"googleVoo":1905,"hotelPorPessoa":1663,"economia":449,"economiaPct":13},{"origem":"GIG","cidade":"Rio de Janeiro","ida":"2026-12-05","volta":"2026-12-12","noites":7,"lugares":9,"prazo":"2026-10-16","hotel":"Carmel Magna Praia Hotel","regime":"Bed and Breakfast * 2","cia":"LATAM","idaSai":"10:10","idaChega":"13:20","voltaSai":"09:00","voltaChega":"12:20","idaTipo":"Direto","voltaTipo":"Direto","preco":3929,"montar":4366,"googleVoo":1168,"hotelPorPessoa":3198,"economia":437,"economiaPct":10},{"origem":"RAO","cidade":"Ribeirão Preto","ida":"2026-11-30","volta":"2026-12-07","noites":7,"lugares":6,"prazo":"2026-11-26","hotel":"Villa Mayor","regime":"Café da Manhã Incluso","cia":"GOL","idaSai":"07:00","idaChega":"15:20","voltaSai":"16:05","voltaChega":"23:00","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":2989,"montar":3397,"googleVoo":1428,"hotelPorPessoa":1969,"economia":408,"economiaPct":12},{"origem":"GRU","cidade":"São Paulo","ida":"2026-12-04","volta":"2026-12-09","noites":5,"lugares":10,"prazo":"2026-10-09","hotel":"Villa Mayor","regime":"Café da Manhã Incluso","cia":"GOL","idaSai":"08:40","idaChega":"12:05","voltaSai":"17:45","voltaChega":"21:30","idaTipo":"Direto","voltaTipo":"Direto","preco":2699,"montar":3125,"googleVoo":1715,"hotelPorPessoa":1410,"economia":426,"economiaPct":14},{"origem":"LDB","cidade":"Londrina","ida":"2026-11-24","volta":"2026-11-29","noites":5,"lugares":8,"prazo":"2026-11-18","hotel":"Villa Mayor","regime":"Café da manhã incluído, Wi-Fi grátis","cia":"LATAM","idaSai":"10:25","idaChega":"16:50","voltaSai":"03:20","voltaChega":"09:45","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3069,"montar":3434,"googleVoo":1721,"hotelPorPessoa":1713,"economia":365,"economiaPct":11},{"origem":"RAO","cidade":"Ribeirão Preto","ida":"2026-12-15","volta":"2026-12-22","noites":7,"lugares":18,"prazo":"2026-10-13","hotel":"Carmel Magna Praia Hotel","regime":"Café da manhã incluído, Wi-Fi grátis","cia":"GOL","idaSai":"07:00","idaChega":"15:20","voltaSai":"16:05","voltaChega":"23:05","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3419,"montar":3801,"googleVoo":1673,"hotelPorPessoa":2128,"economia":382,"economiaPct":10},{"origem":"GYN","cidade":"Goiânia","ida":"2026-11-04","volta":"2026-11-11","noites":7,"lugares":14,"prazo":"2026-10-30","hotel":"Villa Mayor","regime":"Café da Manhã Incluso","cia":"GOL","idaSai":"18:30","idaChega":"23:50","voltaSai":"16:05","voltaChega":"22:25","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":4119,"montar":4580,"googleVoo":1039,"hotelPorPessoa":3541,"economia":461,"economiaPct":10},{"origem":"RAO","cidade":"Ribeirão Preto","ida":"2026-12-14","volta":"2026-12-21","noites":7,"lugares":20,"prazo":"2026-10-09","hotel":"Carmel Magna Praia Hotel","regime":"Breakfast","cia":"GOL","idaSai":"12:25","idaChega":"20:25","voltaSai":"16:05","voltaChega":"23:05","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3349,"montar":3721,"googleVoo":1605,"hotelPorPessoa":2116,"economia":372,"economiaPct":10},{"origem":"GIG","cidade":"Rio de Janeiro","ida":"2027-01-18","volta":"2027-01-25","noites":7,"lugares":10,"prazo":"2026-12-01","hotel":"Carmel Magna Praia Hotel","regime":"Café da manhã","cia":"LATAM","idaSai":"22:40","idaChega":"01:50","voltaSai":"02:30","voltaChega":"05:50","idaTipo":"Direto","voltaTipo":"Direto","preco":3889,"montar":4325,"googleVoo":1680,"hotelPorPessoa":2645,"economia":436,"economiaPct":10},{"origem":"BEL","cidade":"Belém","ida":"2026-10-23","volta":"2026-10-29","noites":6,"lugares":10,"prazo":"2026-10-19","hotel":"Carmel Magna Praia Hotel","regime":"Café da manhã","cia":"LATAM","idaSai":"04:25","idaChega":"13:00","voltaSai":"14:00","voltaChega":"23:15","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":2739,"montar":3043,"googleVoo":1017,"hotelPorPessoa":2026,"economia":304,"economiaPct":10},{"origem":"CNF","cidade":"Belo Horizonte","ida":"2026-11-24","volta":"2026-12-01","noites":7,"lugares":8,"prazo":"2026-11-20","hotel":"Carmel Magna Praia Hotel","regime":"Café da manhã","cia":"GOL","idaSai":"11:55","idaChega":"16:20","voltaSai":"11:55","voltaChega":"16:35","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3129,"montar":3479,"googleVoo":742,"hotelPorPessoa":2737,"economia":350,"economiaPct":10},{"origem":"GYN","cidade":"Goiânia","ida":"2027-01-22","volta":"2027-01-29","noites":7,"lugares":30,"prazo":"2026-11-19","hotel":"Carmel Magna Praia Hotel","regime":"Café da manhã","cia":"GOL","idaSai":"11:30","idaChega":"16:20","voltaSai":"11:55","voltaChega":"16:50","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":3769,"montar":4194,"googleVoo":1600,"hotelPorPessoa":2594,"economia":425,"economiaPct":10},{"origem":"BEL","cidade":"Belém","ida":"2026-10-23","volta":"2026-10-29","noites":6,"lugares":10,"prazo":"2026-10-19","hotel":"Villa Mayor","regime":"Café da Manhã Incluso","cia":"LATAM","idaSai":"04:25","idaChega":"13:00","voltaSai":"14:00","voltaChega":"23:15","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":2589,"montar":2882,"googleVoo":1017,"hotelPorPessoa":1865,"economia":293,"economiaPct":10},{"origem":"CNF","cidade":"Belo Horizonte","ida":"2026-12-03","volta":"2026-12-09","noites":6,"lugares":10,"prazo":"2026-11-27","hotel":"Villa Mayor","regime":"Café da Manhã Incluso","cia":"GOL","idaSai":"11:55","idaChega":"16:20","voltaSai":"11:55","voltaChega":"16:35","idaTipo":"1 Parada","voltaTipo":"1 Parada","preco":2409,"montar":2681,"googleVoo":989,"hotelPorPessoa":1692,"economia":272,"economiaPct":10}],"fotos":{"Carppa Hotel":{"arquivo":"/pacotes-fortaleza/fotos/hotel-carppa-hotel.jpg","legenda":"Carppa Hotel · divulgação"},"Villa Mayor":{"arquivo":"/pacotes-fortaleza/fotos/hotel-villa-mayor.jpg","legenda":"Villa Mayor · divulgação"},"Carmel Magna Praia Hotel":{"arquivo":"/pacotes-fortaleza/fotos/hotel-carmel-magna-praia-hotel.jpg","legenda":"Carmel Magna Praia Hotel · divulgação"}},"fotoCidade":{"arquivo":"/pacotes-fortaleza/fotos/fortaleza.jpg","legenda":"Fortaleza · Praia de Iracema"},"creditos":["Fortaleza (Praia de Iracema): Jade Queiroz - MTUR, via Wikimedia Commons"],"atendentes":[{"nome":"Wester","numero":"5511953967095","exibicao":"(11) 95396-7095"},{"nome":"Bruno","numero":"5511981104018","exibicao":"(11) 98110-4018"}],"parcelas":6};
+const ZAP = '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6-.3.4c.1.2.6 1 1.3 1.6.9.8 1.6 1 1.8 1.1.2.1.4.1.5-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg>';
+const ATENDENTES = DADOS.atendentes;
+const PARCELAS = DADOS.parcelas;
+const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+const NOME_MES = { '10': 'Outubro', '11': 'Novembro', '12': 'Dezembro', '01': 'Janeiro', '02': 'Fevereiro' };
+const ORDEM_MES = (m) => (Number(m) < 6 ? Number(m) + 12 : Number(m)); // janeiro depois de dezembro
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const reais = (v) => Math.round(v).toLocaleString('pt-BR');
+const dia = (iso) => `${Number(iso.slice(8, 10))} ${MESES[Number(iso.slice(5, 7)) - 1]}`;
+const escala = (t) => (t && !/^direto$/i.test(t) ? ` (${esc(t.toLowerCase())})` : '');
+const ddmm = (iso) => `${iso.slice(8, 10)}/${iso.slice(5, 7)}`;
+const linkWhats = (numero, texto) => `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+const centavos = (v) => v.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+const ofertas = DADOS.ofertas.map((o, i) => ({ ...o, ordem: i, mes: o.ida.slice(5, 7) }));
+document.getElementById('atendentes').innerHTML = ATENDENTES.map((a) => `<a class="btn-whats" href="${linkWhats(a.numero, `Olá, ${a.nome}! Vi os pacotes para Fortaleza no site da Mesquita Turismo e quero mais informações.`)}" target="_blank" rel="noopener">${ZAP}${esc(a.nome)} <small class="tab">${esc(a.exibicao)}</small></a>`).join('');
+const meses = [...new Set(ofertas.map((o) => o.mes))].sort((a, b) => ORDEM_MES(a) - ORDEM_MES(b));
+const nCidades = new Set(ofertas.map((o) => o.origem)).size;
+document.getElementById('sub').textContent = `${ofertas.length} ${ofertas.length === 1 ? 'pacote' : 'pacotes'} com aéreo e hotel saindo de ${nCidades === 1 ? ofertas[0].cidade : `${nCidades} cidades`}, com preço por pessoa em apartamento duplo e já com as taxas, em até ${PARCELAS}x sem juros ou à vista no Pix. Comparados com o mesmo hotel no Booking mais o menor voo do Google Voos, nas mesmas datas, consultados em ${DADOS.consultado}.`;
+
+const estado = { hotel: 'todos', mes: 'todos', origem: 'todas' };
+function chips(id, chave, opcoes) {
+  const el = document.getElementById(id);
+  for (const [valor, rotulo] of opcoes) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip'; b.textContent = rotulo; b.dataset.v = valor;
+    b.setAttribute('aria-pressed', String(estado[chave] === valor));
+    b.addEventListener('click', () => { estado[chave] = valor; el.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.v === valor))); desenhar(); });
+    el.appendChild(b);
+  }
+}
+chips('f-origem', 'origem', [['todas', 'Todas'], ...[...new Map(ofertas.map((o) => [o.origem, o.cidade])).entries()].map(([k, v]) => [k, v])]);
+chips('f-mes', 'mes', [['todos', 'Todos'], ...meses.map((m) => [m, NOME_MES[m] || m])]);
+chips('f-hotel', 'hotel', [['todos', 'Todos'], ...[...new Set(ofertas.map((o) => o.hotel))].map((h) => [h, h])]);
+document.getElementById('ordem').addEventListener('change', desenhar);
+
+function card(o) {
+  const foto = DADOS.fotos[o.hotel] || DADOS.fotoCidade;
+  const texto = (nome) => `Olá, ${nome}! Quero o pacote para Fortaleza saindo de ${o.cidade} (${o.origem}), ${ddmm(o.ida)} a ${ddmm(o.volta)}, ${o.noites} noites no ${o.hotel}, por R$ ${reais(o.preco)} por pessoa (oferta do site).`;
+  return `<article class="card">
+    <div class="foto">${foto ? `<img src="${esc(foto.arquivo)}" alt="${esc(foto.legenda)}" loading="lazy"><span class="leg">${esc(foto.legenda)}</span>` : ''}${o.lugares <= 9 ? '<span class="ult">Últimos lugares</span>' : ''}</div>
+    <div class="corpo">
+      <div><h2>Fortaleza</h2><div class="rota">saindo de ${esc(o.cidade)} (${esc(o.origem)})</div></div>
+      <div class="voo tab"><div><b>${dia(o.ida)} → ${dia(o.volta)}</b> · ${o.noites} noites</div><div><b>${esc(o.hotel)}</b>${o.regime ? ` · ${esc(o.regime)}` : ''}</div><div>${esc(o.cia)} · ida ${esc(o.idaSai)} → ${esc(o.idaChega)}${escala(o.idaTipo)} · volta ${esc(o.voltaSai)} → ${esc(o.voltaChega)}${escala(o.voltaTipo)}</div></div>
+      <div class="precos">
+        <div><div class="google">Montando sozinho: <s class="tab">R$ ${reais(o.montar)}</s><span class="q tab">voo R$ ${reais(o.googleVoo)} (Google Voos) + hotel R$ ${reais(o.hotelPorPessoa)} (Booking)</span></div><div class="preco tab"><small>R$</small>${reais(o.preco)}</div><div class="det">por pessoa em apto duplo · com taxas${o.prazo ? ` · reserve até ${ddmm(o.prazo)}` : ""}</div><div class="parc tab"><b>${PARCELAS}x de R$ ${centavos(o.preco / PARCELAS)}</b> sem juros ou à vista no Pix</div></div>
+        <span class="eco tab">Economize R$ ${reais(o.economia)}</span>
+      </div>
+      <div class="quero-rot">Quero este pacote · fale com</div>
+      <div class="quero">${ATENDENTES.map((a) => `<a href="${linkWhats(a.numero, texto(a.nome))}" target="_blank" rel="noopener">${ZAP}${esc(a.nome)}</a>`).join('')}</div>
+    </div>
+  </article>`;
+}
+
+function desenhar() {
+  const ordem = document.getElementById('ordem').value;
+  const lista = ofertas.filter((o) => (estado.hotel === 'todos' || o.hotel === estado.hotel) && (estado.mes === 'todos' || o.mes === estado.mes) && (estado.origem === 'todas' || o.origem === estado.origem));
+  lista.sort({ destaque: (a, b) => a.ordem - b.ordem, economia: (a, b) => b.economia - a.economia, preco: (a, b) => a.preco - b.preco, data: (a, b) => a.ida.localeCompare(b.ida) }[ordem]);
+  document.getElementById('grade').innerHTML = lista.map(card).join('');
+  document.getElementById('vazio').hidden = lista.length > 0;
+  document.getElementById('contagem').textContent = `${lista.length} de ${ofertas.length} pacotes`;
+}
+desenhar();
+
+document.getElementById('rodape').innerHTML = `
+  <div>Preços por pessoa em apartamento duplo, com aéreo ida e volta, hospedagem e taxas, consultados em ${esc(DADOS.consultado)}. Pagamento em até ${PARCELAS}x sem juros ou à vista no Pix, pelo mesmo preço. Sujeitos a disponibilidade e alteração até a emissão. Regras da tarifa confirmadas no atendimento.</div>
+  <div>"Montando sozinho" = menor preço de ida e volta por adulto exibido no Google Voos para as mesmas datas e aeroportos + o mesmo hotel no Booking, para 2 adultos, dividido por pessoa, na data da consulta. Google e Booking são marcas de seus donos, sem relação com a Mesquita Turismo. Fotos dos hotéis: divulgação.</div>
+  <details><summary>Créditos das fotos</summary><ul>${DADOS.creditos.map((c) => `<li>${esc(c)}</li>`).join('')}</ul></details>
+  <div>Mesquita Turismo · WhatsApp ${ATENDENTES.map((a) => `${esc(a.nome)} ${esc(a.exibicao)}`).join(' · ')}</div>`;
+</script>
+</body>
+</html>
