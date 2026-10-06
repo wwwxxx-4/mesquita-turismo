@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Promoções de passagens · Mesquita Turismo</title>
+<meta name="description" content="Promoções de passagens aéreas ida e volta com preço conferido no dia. Compre no site da Mesquita Turismo ou fale com a gente no WhatsApp.">
+<meta property="og:title" content="Promoções de passagens aéreas · Mesquita Turismo">
+<meta property="og:description" content="Passagens ida e volta em promoção, com preço por pessoa conferido no dia.">
+<meta property="og:image" content="https://www.mesquitaturismo.com.br/passagens-em-oferta/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.mesquitaturismo.com.br/promocoes-passagens/">
+<link rel="canonical" href="https://www.mesquitaturismo.com.br/promocoes-passagens/">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/identidade.css">
+<style>
+/* Mesma linguagem da /passagens-em-oferta/: azul do logo, preco em azul,
+   cards brancos sem sombra. Aqui nao ha comparacao com outro site: so o
+   preco da Mesquita, conferido no dia, e o link para comprar. */
+:root {
+  --azul: #1072B9; --azul-claro: #55B5E5; --azul-bg: #EAF5FC; --noite: #0B2440;
+  --papel: #F5F8FB; --folha: #FFFFFF; --tinta: #10233B; --tinta-2: #55657C; --linha: #DCE5EE;
+  --verde: #138A55; --verde-bg: #E3F5EC;
+  --cond: 'Barlow Condensed', 'Arial Narrow', sans-serif; --txt: 'Barlow', 'Segoe UI', system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 16px/1.5 var(--txt); }
+a { color: inherit; }
+.tab { font-variant-numeric: tabular-nums; }
+.topo { position: sticky; top: 0; z-index: 10; background: var(--folha); border-bottom: 1px solid var(--linha); padding: calc(env(safe-area-inset-top, 0px) + 10px) 16px 10px; }
+.topo .in { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.topo img { height: 44px; display: block; }
+.atendentes { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.btn-whats { display: inline-flex; align-items: center; gap: 8px; background: #1FAF38; color: #fff; text-decoration: none; font-weight: 700; border-radius: 999px; padding: 8px 14px; white-space: nowrap; font-size: 15px; }
+.btn-whats small { font-weight: 500; opacity: .92; }
+.btn-whats svg, .zap svg { width: 18px; height: 18px; fill: currentColor; flex: none; }
+.pagina { max-width: 1160px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 48px; }
+.hero h1 { font: 800 clamp(34px, 6vw, 58px)/1 var(--cond); margin: 0; text-wrap: balance; color: var(--noite); }
+.hero h1 em { font-style: normal; color: var(--azul); }
+.hero p { color: var(--tinta-2); margin: 10px 0 0; max-width: 70ch; }
+.selo { display: inline-flex; gap: 6px; align-items: center; background: var(--verde-bg); color: var(--verde); font-weight: 700; font-size: 14px; border-radius: 999px; padding: 5px 12px; margin-top: 12px; }
+.filtros { display: grid; gap: 10px; margin-top: 22px; }
+.linha-f { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.linha-f > span { font: 700 13px var(--cond); letter-spacing: .12em; text-transform: uppercase; color: var(--tinta-2); margin-right: 4px; }
+.chip { border: 1px solid var(--linha); background: var(--folha); color: var(--tinta); border-radius: 999px; padding: 6px 13px; font: 500 14px var(--txt); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--azul); border-color: var(--azul); color: #fff; }
+.contagem { color: var(--tinta-2); font-size: 14px; }
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 16px; margin-top: 18px; }
+.card { background: var(--folha); border: 1px solid var(--linha); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.faixa { background: linear-gradient(120deg, var(--noite), var(--azul)); color: #fff; padding: 16px 16px 14px; }
+.faixa h2 { font: 800 32px/1 var(--cond); margin: 0; }
+.faixa .rota { font-size: 14px; opacity: .9; margin-top: 4px; }
+.corpo { padding: 14px 16px 16px; display: grid; gap: 10px; flex: 1; }
+.voo { font-size: 14px; display: grid; gap: 2px; }
+.voo b { font-weight: 600; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { background: var(--azul-bg); color: var(--azul); font-size: 12px; font-weight: 600; border-radius: 999px; padding: 2px 9px; }
+.precos { border-top: 1px dashed var(--linha); padding-top: 10px; margin-top: auto; }
+.preco { font: 800 40px/1 var(--cond); color: var(--azul); }
+.preco small { font-size: 20px; margin-right: 3px; }
+.det { font-size: 12px; color: var(--tinta-2); }
+.parc { font-size: 13px; margin-top: 3px; }
+.acoes { display: grid; gap: 8px; }
+.comprar { display: flex; align-items: center; justify-content: center; text-decoration: none; background: var(--azul); color: #fff; font-weight: 700; border-radius: 10px; padding: 11px 8px; }
+.comprar:hover { background: var(--noite); }
+.zaps { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+.zap { display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; border: 1px solid #1FAF38; color: #13852A; font-weight: 700; border-radius: 10px; padding: 9px 8px; font-size: 14px; }
+.vazio { padding: 32px; text-align: center; color: var(--tinta-2); }
+.rodape { margin-top: 36px; border-top: 1px solid var(--linha); padding-top: 16px; color: var(--tinta-2); font-size: 13px; display: grid; gap: 8px; max-width: 90ch; }
+@media (max-width: 560px) { .topo img { height: 30px; } .btn-whats small { display: none; } .btn-whats { padding: 7px 11px; font-size: 14px; } }
+</style>
+</head>
+<body>
+<header class="topo"><div class="in">
+  <a href="/" title="Página inicial da Mesquita Turismo"><img src="/passagens-em-oferta/logo.png" alt="Mesquita Turismo"></a>
+  <div class="atendentes" id="atendentes"></div>
+</div></header>
+
+<main class="pagina">
+  <section class="hero">
+    <h1 id="titulo">Promoções de <em>passagens aéreas</em></h1>
+    <p id="sub"></p>
+    <div class="selo tab" id="selo"></div>
+  </section>
+
+  <div class="filtros">
+    <div class="linha-f" id="f-origem"><span>Saindo de</span></div>
+    <div class="linha-f" id="f-destino"><span>Destino</span></div>
+    <div class="linha-f"><span>Ordem</span>
+      <select class="chip" id="ordem" aria-label="Ordenar">
+        <option value="preco">Menor preço</option>
+        <option value="data">Data da viagem</option>
+      </select>
+      <span class="contagem tab" id="contagem" style="margin-left:auto"></span>
+    </div>
+  </div>
+
+  <div class="grade" id="grade"></div>
+  <div class="vazio" id="vazio" hidden>Nenhuma promoção com esses filtros agora. Fale com a gente no WhatsApp que cotamos para você.</div>
+
+  <footer class="rodape" id="rodape"></footer>
+</main>
+
+<script>
+const DADOS = {"consultado":"06/10 às 07:20","titulo":null,"ofertas":[{"origem":"SAO","origemNome":"São Paulo","destino":"SJO","cidade":"San José (Costa Rica)","ida":"2026-10-28","volta":"2026-10-31","noites":3,"preco":2366,"cia":"Latam","direto":false,"bagagem":false,"idaSai":"07:30","voltaSai":"13:40","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2026-10-28T00:00:00.000Z&returnDate=2026-10-31T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=SJO&isDepartureIataCity=true&isArrivalIataCity=false&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"AUA","cidade":"Aruba","ida":"2026-10-27","volta":"2026-10-31","noites":4,"preco":2851,"cia":"Gol","direto":false,"bagagem":false,"idaSai":"17:25","voltaSai":"11:45","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2026-10-27T00:00:00.000Z&returnDate=2026-10-31T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=AUA&isDepartureIataCity=true&isArrivalIataCity=false&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"MIA","cidade":"Miami","ida":"2026-11-08","volta":"2026-11-24","noites":16,"preco":3122,"cia":"Latam","direto":false,"bagagem":false,"idaSai":"23:55","voltaSai":"18:40","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2026-11-08T00:00:00.000Z&returnDate=2026-11-24T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=MIA&isDepartureIataCity=true&isArrivalIataCity=false&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"FLL","cidade":"Fort Lauderdale","ida":"2027-02-10","volta":"2027-02-17","noites":7,"preco":3123,"cia":"Copa","direto":false,"bagagem":false,"idaSai":"04:50","voltaSai":"17:09","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2027-02-10T00:00:00.000Z&returnDate=2027-02-17T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=FLL&isDepartureIataCity=true&isArrivalIataCity=false&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"CUN","cidade":"Cancún","ida":"2027-02-20","volta":"2027-02-27","noites":7,"preco":3149,"cia":"Gol","direto":false,"bagagem":false,"idaSai":"21:00","voltaSai":"18:00","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2027-02-20T00:00:00.000Z&returnDate=2027-02-27T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=CUN&isDepartureIataCity=true&isArrivalIataCity=false&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"ORL","cidade":"Orlando","ida":"2027-01-26","volta":"2027-02-06","noites":11,"preco":3284,"cia":"United","direto":false,"bagagem":false,"idaSai":"22:25","voltaSai":"18:55","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2027-01-26T00:00:00.000Z&returnDate=2027-02-06T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=ORL&isDepartureIataCity=true&isArrivalIataCity=false&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"KIN","cidade":"Kingston","ida":"2026-11-23","volta":"2026-12-03","noites":10,"preco":3371,"cia":"Copa","direto":false,"bagagem":false,"idaSai":"11:10","voltaSai":"15:03","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2026-11-23T00:00:00.000Z&returnDate=2026-12-03T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=KIN&isDepartureIataCity=true&isArrivalIataCity=false&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"BOS","cidade":"Boston","ida":"2026-11-12","volta":"2026-11-24","noites":12,"preco":3861,"cia":"Delta Air Lines","direto":false,"bagagem":false,"idaSai":"22:40","voltaSai":"13:45","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2026-11-12T00:00:00.000Z&returnDate=2026-11-24T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=BOS&isDepartureIataCity=true&isArrivalIataCity=false&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"VCE","cidade":"Veneza","ida":"2026-11-10","volta":"2026-12-01","noites":21,"preco":4054,"cia":"Iberia","direto":false,"bagagem":false,"idaSai":"15:10","voltaSai":"06:20","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2026-11-10T00:00:00.000Z&returnDate=2026-12-01T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=VCE&isDepartureIataCity=true&isArrivalIataCity=false&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"BCN","cidade":"Barcelona","ida":"2026-11-04","volta":"2026-11-18","noites":14,"preco":4187,"cia":"Gol","direto":false,"bagagem":false,"idaSai":"19:15","voltaSai":"17:55","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2026-11-04T00:00:00.000Z&returnDate=2026-11-18T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=BCN&isDepartureIataCity=true&isArrivalIataCity=false&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"PAR","cidade":"Paris","ida":"2026-10-28","volta":"2026-11-09","noites":12,"preco":4324,"cia":"Avianca","direto":false,"bagagem":false,"idaSai":"07:55","voltaSai":"09:00","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2026-10-28T00:00:00.000Z&returnDate=2026-11-09T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=PAR&isDepartureIataCity=true&isArrivalIataCity=true&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"ROM","cidade":"Roma","ida":"2026-11-25","volta":"2026-12-02","noites":7,"preco":4375,"cia":"Iberia","direto":false,"bagagem":false,"idaSai":"20:30","voltaSai":"16:20","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2026-11-25T00:00:00.000Z&returnDate=2026-12-02T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=ROM&isDepartureIataCity=true&isArrivalIataCity=true&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"MIL","cidade":"Milão","ida":"2026-11-09","volta":"2026-11-24","noites":15,"preco":4429,"cia":"TAP","direto":false,"bagagem":false,"idaSai":"16:20","voltaSai":"06:15","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2026-11-09T00:00:00.000Z&returnDate=2026-11-24T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=MIL&isDepartureIataCity=true&isArrivalIataCity=true&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"LIS","cidade":"Lisboa","ida":"2026-10-21","volta":"2026-11-04","noites":14,"preco":4582,"cia":"Latam","direto":true,"bagagem":false,"idaSai":"07:30","voltaSai":"13:50","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2026-10-21T00:00:00.000Z&returnDate=2026-11-04T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=LIS&isDepartureIataCity=true&isArrivalIataCity=false&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"FRA","cidade":"Frankfurt","ida":"2026-11-11","volta":"2026-11-25","noites":14,"preco":4683,"cia":"Latam","direto":false,"bagagem":false,"idaSai":"23:10","voltaSai":"06:00","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2026-11-11T00:00:00.000Z&returnDate=2026-11-25T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=FRA&isDepartureIataCity=true&isArrivalIataCity=false&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"AMS","cidade":"Amsterdã","ida":"2026-11-11","volta":"2026-11-25","noites":14,"preco":4819,"cia":"TAP","direto":false,"bagagem":false,"idaSai":"16:20","voltaSai":"07:00","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2026-11-11T00:00:00.000Z&returnDate=2026-11-25T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=AMS&isDepartureIataCity=true&isArrivalIataCity=false&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"LON","cidade":"Londres","ida":"2026-11-18","volta":"2026-12-02","noites":14,"preco":5603,"cia":"Latam","direto":false,"bagagem":false,"idaSai":"23:40","voltaSai":"06:15","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2026-11-18T00:00:00.000Z&returnDate=2026-12-02T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=LON&isDepartureIataCity=true&isArrivalIataCity=true&source=f"},{"origem":"SAO","origemNome":"São Paulo","destino":"CAN","cidade":"Guangzhou (Canton)","ida":"2026-11-23","volta":"2026-12-10","noites":17,"preco":5884,"cia":"Air China","direto":false,"bagagem":true,"idaSai":"08:30","voltaSai":"20:45","link":"https://www.comprarviagem.com.br/mesquitaturismo/flight-list?departureDate=2026-11-23T00:00:00.000Z&returnDate=2026-12-10T00:00:00.000Z&isRoundTrip=true&adultsCount=1&teenagerCount=0&infantCount=0&childCount=0&departureIata=SAO&arrivalIata=CAN&isDepartureIataCity=true&isArrivalIataCity=false&source=f"}],"atendentes":[{"nome":"Wester","numero":"5511953967095","exibicao":"(11) 95396-7095"},{"nome":"Bruno","numero":"5511981104018","exibicao":"(11) 98110-4018"}]};
+const ZAP = '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6-.3.4c.1.2.6 1 1.3 1.6.9.8 1.6 1 1.8 1.1.2.1.4.1.5-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg>';
+const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const reais = (v) => Math.round(v).toLocaleString('pt-BR');
+const dia = (iso) => `${Number(iso.slice(8, 10))} ${MESES[Number(iso.slice(5, 7)) - 1]} ${iso.slice(2, 4)}`;
+const ddmm = (iso) => `${iso.slice(8, 10)}/${iso.slice(5, 7)}/${iso.slice(0, 4)}`;
+const linkWhats = (numero, texto) => `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+const ATENDENTES = DADOS.atendentes;
+const ofertas = DADOS.ofertas;
+
+document.getElementById('atendentes').innerHTML = ATENDENTES.map((a) => `<a class="btn-whats" href="${linkWhats(a.numero, `Olá, ${a.nome}! Vi as promoções de passagens no site da Mesquita Turismo e quero mais informações.`)}" target="_blank" rel="noopener">${ZAP}${esc(a.nome)} <small class="tab">${esc(a.exibicao)}</small></a>`).join('');
+document.getElementById('sub').textContent = `${ofertas.length} promoç${ofertas.length === 1 ? 'ão' : 'ões'} de ida e volta, com preço por pessoa já com as taxas. Clique em "Ver voos e comprar" para abrir a busca com as datas já preenchidas, ou chame a gente no WhatsApp.`;
+if (DADOS.titulo) document.getElementById('titulo').innerHTML = `Passagens para <em>${esc(DADOS.titulo)}</em> em promoção`;
+if (new Set(ofertas.map((o) => o.destino)).size < 2) document.getElementById('f-destino').hidden = true;
+document.getElementById('selo').textContent = `✓ Preços conferidos em ${DADOS.consultado}`;
+
+const estado = { origem: 'todas', destino: 'todos' };
+function chips(id, chave, opcoes) {
+  const el = document.getElementById(id);
+  for (const [valor, rotulo] of opcoes) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip'; b.textContent = rotulo; b.dataset.v = valor;
+    b.setAttribute('aria-pressed', String(estado[chave] === valor));
+    b.addEventListener('click', () => { estado[chave] = valor; el.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.v === valor))); desenhar(); });
+    el.appendChild(b);
+  }
+}
+chips('f-origem', 'origem', [['todas', 'Todas'], ...[...new Map(ofertas.map((o) => [o.origem, o.origemNome])).entries()]]);
+chips('f-destino', 'destino', [['todos', 'Todos'], ...[...new Map(ofertas.map((o) => [o.destino, o.cidade])).entries()]]);
+document.getElementById('ordem').addEventListener('change', desenhar);
+
+function card(o) {
+  const texto = (nome) => `Olá, ${nome}! Quero a promoção ${o.origemNome} → ${o.cidade}, ida ${ddmm(o.ida)} e volta ${ddmm(o.volta)}, ${o.cia}, por R$ ${reais(o.preco)} por pessoa (promoções do site).`;
+  return `<article class="card">
+    <div class="faixa">${DADOS.titulo
+      ? `<h2>Saindo de ${esc(o.origemNome)}</h2><div class="rota">${esc(o.origem)} → ${esc(o.cidade)} (${esc(o.destino)})</div>`
+      : `<h2>${esc(o.cidade)}</h2><div class="rota">saindo de ${esc(o.origemNome)} (${esc(o.origem)}) → ${esc(o.destino)}</div>`}</div>
+    <div class="corpo">
+      <div class="voo tab"><div><b>${dia(o.ida)} → ${dia(o.volta)}</b> · ${o.noites} dia${o.noites === 1 ? '' : 's'}</div><div>${esc(o.cia)} · ida às ${esc(o.idaSai)} · volta às ${esc(o.voltaSai)}</div></div>
+      <div class="tags">${o.direto ? '<span class="tag">Voo direto</span>' : ''}${o.bagagem ? '<span class="tag">Com mala despachada</span>' : '<span class="tag">Bagagem de mão</span>'}</div>
+      <div class="precos"><div class="preco tab"><small>R$</small>${reais(o.preco)}</div><div class="det">por pessoa · ida e volta com taxas</div></div>
+      <div class="acoes">
+        <a class="comprar" href="${esc(o.link)}" target="_blank" rel="noopener">Ver voos e comprar</a>
+        <div class="zaps">${ATENDENTES.map((a) => `<a class="zap" href="${linkWhats(a.numero, texto(a.nome))}" target="_blank" rel="noopener">${ZAP}${esc(a.nome)}</a>`).join('')}</div>
+      </div>
+    </div>
+  </article>`;
+}
+
+function desenhar() {
+  const ordem = document.getElementById('ordem').value;
+  const lista = ofertas.filter((o) => (estado.origem === 'todas' || o.origem === estado.origem) && (estado.destino === 'todos' || o.destino === estado.destino));
+  lista.sort(ordem === 'data' ? (a, b) => a.ida.localeCompare(b.ida) : (a, b) => a.preco - b.preco);
+  document.getElementById('grade').innerHTML = lista.map(card).join('');
+  document.getElementById('vazio').hidden = lista.length > 0;
+  document.getElementById('contagem').textContent = `${lista.length} de ${ofertas.length}`;
+}
+desenhar();
+
+document.getElementById('rodape').innerHTML = `
+  <div>Preços por pessoa, ida e volta, com taxas, conferidos em ${esc(DADOS.consultado)} para as datas mostradas. Passagem aérea muda de preço a qualquer momento: o valor final é o que aparecer na hora da compra. Sujeito a disponibilidade.</div>
+  <div>Mesquita Turismo · WhatsApp ${ATENDENTES.map((a) => `${esc(a.nome)} ${esc(a.exibicao)}`).join(' · ')}</div>`;
+</script>
+</body>
+</html>
