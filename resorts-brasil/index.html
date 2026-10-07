@@ -40,6 +40,11 @@ img { max-width: 100%; display: block; }
 .hero p { color: var(--tinta-2); margin: 12px 0 0; max-width: 72ch; }
 .premiacoes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
 .premiacoes span { background: var(--azul-bg); border: 1px solid var(--azul-borda); color: var(--azul); font-size: 13px; font-weight: 600; border-radius: 999px; padding: 3px 10px; }
+.live-yt { margin-top: 22px; max-width: 900px; }
+.live-rotulo { display: flex; align-items: center; gap: 10px; font: 700 15px var(--txt); color: var(--noite); margin-bottom: 10px; }
+.live-rotulo .ponto { width: 10px; height: 10px; border-radius: 50%; background: #E11D48; flex: none; }
+.live-quadro { position: relative; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: var(--noite); border: 1px solid var(--linha); }
+.live-quadro iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .filtros { display: grid; gap: 10px; margin-top: 24px; }
 .linha-f { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .linha-f > span { font: 700 13px var(--cond); letter-spacing: .12em; text-transform: uppercase; color: var(--tinta-2); margin-right: 4px; }
@@ -108,6 +113,11 @@ dialog.player button { margin: 10px auto 0; display: block; background: #fff; bo
     <h1>Os 30 melhores <em>resorts do Brasil</em> em 2026</h1>
     <p>Juntamos os principais prêmios de hotelaria de 2025 e 2026 e montamos o nosso ranking: o que cada resort tem, por que ele está na lista, os pontos fortes e o que vale saber antes de ir. Escolheu? Clique em <b>Ver preços e reservar</b> ou fale com a gente no WhatsApp.</p>
     <div class="premiacoes"><span>Prêmio Viagem e Turismo 2026</span><span>Prêmio Melhores Destinos 2025/26</span><span>Tripadvisor Travellers' Choice</span><span>World Travel Awards 2025</span><span>Condé Nast Traveler</span><span>Guia Michelin 2025</span></div>
+  </section>
+
+  <section class="live-yt" aria-label="Vídeo da live">
+    <div class="live-rotulo"><span class="ponto"></span>Assista à live: os 30 resorts do 30º ao 1º, com perguntas respondidas ao vivo</div>
+    <div class="live-quadro"><iframe src="https://www.youtube-nocookie.com/embed/Qz_fvg3b0oI?rel=0" title="Os 30 melhores resorts do Brasil em 2026 (live)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
   </section>
 
   <div class="filtros">
