@@ -147,7 +147,7 @@ chips('f-regiao', [['todas', 'Todas'], ...regioes.map((r) => [r, r])], 'regiao')
 chips('f-estilo', ESTILOS, 'estilo');
 
 function card(x) {
-  const thumbs = x.imgs.length > 1 ? '<div class="miniaturas">' + x.imgs.map((s, i) => '<button type="button" aria-label="Imagem ' + (i + 1) + '" aria-pressed="' + (i === 0) + '" data-i="' + i + '"><img src="img/' + s + '" alt="" loading="lazy"></button>').join('') + '</div>' : '';
+  const thumbs = x.imgs.length > 1 ? '<div class="miniaturas">' + x.imgs.map((s, i) => '<button type="button" aria-label="Imagem ' + (i + 1) + '" aria-pressed="' + (i === 0) + '" data-i="' + i + '"><img src="/praias-brasil/img/' + s + '" alt="" loading="lazy"></button>').join('') + '</div>' : '';
   const video = x.video ? '<button class="btn-video" type="button" data-video="' + esc(x.video) + '">▶ Ver vídeo</button>' : '';
   const cred = (c) => (c.tipo === 'clipe' ? 'Vídeo' : 'Foto') + ': ' + esc(c.autor) + (c.licenca ? ' · ' + esc(c.licenca.replace(' (YouTube)', '')) : '');
   const hoteis = x.link ? '<a class="btn azul" href="' + esc(x.link) + '" target="_blank" rel="noopener">Ver hotéis em ' + esc(x.linkCidade) + '</a>' : '';
@@ -158,7 +158,7 @@ function card(x) {
     x.ficar && '<div><b>Onde ficar:</b> ' + esc(x.ficar) + '</div>',
   ].filter(Boolean).join('');
   return '<article class="card" id="p' + x.pos + '">'
-    + '<div><div class="galeria"><img class="capa" src="img/' + x.imgs[0] + '" alt="' + esc(x.alt[0]) + '" loading="' + (x.pos <= 2 ? 'eager' : 'lazy') + '"><div class="posicao tab"><small>#</small>' + x.pos + '</div>' + video + thumbs + '</div>'
+    + '<div><div class="galeria"><img class="capa" src="/praias-brasil/img/' + x.imgs[0] + '" alt="' + esc(x.alt[0]) + '" loading="' + (x.pos <= 2 ? 'eager' : 'lazy') + '"><div class="posicao tab"><small>#</small>' + x.pos + '</div>' + video + thumbs + '</div>'
     + '<div class="credito-foto" data-cred>' + cred(x.creditos[0]) + '</div></div>'
     + '<div class="corpo">'
     + '<div><h2>' + esc(x.nome) + '</h2><div class="local">' + esc(x.cidade) + ' · ' + esc(x.uf) + ' · ' + esc(x.regiao) + '</div></div>'
@@ -189,7 +189,7 @@ document.getElementById('lista').addEventListener('click', (e) => {
     const x = DADOS.praias.find((p) => 'p' + p.pos === t.closest('.card').id);
     const i = Number(t.dataset.i);
     const g = t.closest('.galeria');
-    const capa = g.querySelector('.capa'); capa.src = 'img/' + x.imgs[i]; capa.alt = x.alt[i];
+    const capa = g.querySelector('.capa'); capa.src = '/praias-brasil/img/' + x.imgs[i]; capa.alt = x.alt[i];
     const c = x.creditos[i];
     t.closest('.card').querySelector('[data-cred]').textContent = (c.tipo === 'clipe' ? 'Vídeo' : 'Foto') + ': ' + c.autor + (c.licenca ? ' · ' + c.licenca.replace(' (YouTube)', '') : '');
     g.querySelectorAll('.miniaturas button').forEach((b) => b.setAttribute('aria-pressed', b === t));

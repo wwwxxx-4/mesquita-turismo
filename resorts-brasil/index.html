@@ -168,7 +168,7 @@ chips('f-tipo', TIPOS, 'tipo');
 document.getElementById('ordem').addEventListener('change', desenhar);
 
 function card(x) {
-  const thumbs = x.imgs.length > 1 ? '<div class="miniaturas">' + x.imgs.map((s, i) => '<button type="button" aria-label="Foto ' + (i + 1) + '" aria-pressed="' + (i === 0) + '" data-src="img/' + s + '" data-alt="' + esc(x.alt[i]) + '"><img src="img/' + s + '" alt="" loading="lazy"></button>').join('') + '</div>' : '';
+  const thumbs = x.imgs.length > 1 ? '<div class="miniaturas">' + x.imgs.map((s, i) => '<button type="button" aria-label="Foto ' + (i + 1) + '" aria-pressed="' + (i === 0) + '" data-src="/resorts-brasil/img/' + s + '" data-alt="' + esc(x.alt[i]) + '"><img src="/resorts-brasil/img/' + s + '" alt="" loading="lazy"></button>').join('') + '</div>' : '';
   const video = x.video ? '<button class="btn-video" type="button" data-video="' + esc(x.video) + '">▶ Ver vídeo</button>' : '';
   const precoHtml = x.preco
     ? '<div class="preco tab">R$ ' + reais(x.preco) + '<small>a partir de, 4 noites para 2 pessoas (' + esc(x.precoDatas) + ')</small></div>'
@@ -176,7 +176,7 @@ function card(x) {
   const comprar = x.link ? '<a class="btn azul" href="' + esc(x.link) + '" target="_blank" rel="noopener">' + (x.linkTipo !== 'hotel' ? 'Ver hotéis em ' + esc(x.cidade) : x.preco ? 'Ver preços e reservar' : 'Consultar outras datas') + '</a>' : '';
   const zap = '<a class="btn zap" href="' + linkWhats(A[0].numero, 'Olá! Quero cotar uma viagem para o ' + x.nome + ' (' + x.cidade + '/' + x.uf + '), que vi na lista dos 30 melhores resorts do site.') + '" target="_blank" rel="noopener">' + ZAP + 'Cotar com aéreo</a>';
   return '<article class="card" id="r' + x.pos + '">'
-    + '<div class="galeria"><img class="capa" src="img/' + x.imgs[0] + '" alt="' + esc(x.alt[0]) + '" loading="' + (x.pos <= 2 ? 'eager' : 'lazy') + '"><div class="posicao tab"><small>#</small>' + x.pos + '</div>' + video + thumbs + '</div>'
+    + '<div class="galeria"><img class="capa" src="/resorts-brasil/img/' + x.imgs[0] + '" alt="' + esc(x.alt[0]) + '" loading="' + (x.pos <= 2 ? 'eager' : 'lazy') + '"><div class="posicao tab"><small>#</small>' + x.pos + '</div>' + video + thumbs + '</div>'
     + '<div class="corpo">'
     + '<div><h2>' + esc(x.nome) + '</h2><div class="local">' + esc(x.cidade) + ' · ' + esc(x.uf) + '</div></div>'
     + '<div class="tags"><span class="tag">' + esc(x.categoria) + '</span>' + (x.categoria.toLowerCase().includes(x.regime.toLowerCase()) || x.regime.toLowerCase().includes(x.categoria.toLowerCase()) ? '' : '<span class="tag">' + esc(x.regime) + '</span>') + '<span class="tag">' + esc(x.perfil) + '</span>' + (x.nota ? '<span class="tag ouro">★ ' + esc(x.nota) + '</span>' : '') + '</div>'
