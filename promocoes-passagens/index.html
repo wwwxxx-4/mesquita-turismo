@@ -108,7 +108,7 @@ const lista = promos.slice((pagina - 1) * POR_PAGINA, pagina * POR_PAGINA);
 document.getElementById('lista').innerHTML = lista.map((p) => `
   <a class="promo${p.ativa ? '' : ' velha'}" href="/promocoes-passagens/${esc(p.pasta)}/">
     <div>
-      <h2>Passagens para ${esc(p.titulo)}<span class="status ${p.ativa ? 'ativa' : 'encerrada'}">${p.ativa ? `Ativa até ${dataCurta(p.ateDia)}` : `Encerrada em ${dataCurta(p.encerrada)}`}</span></h2>
+      <h2>Passagens para ${esc(p.titulo)}${p.ativa ? '' : `<span class="status encerrada">Encerrada em ${dataCurta(p.encerrada)}</span>`}</h2>
       <div class="sub">${p.saidas} cidade${p.saidas === 1 ? '' : 's'} de saída${p.deSP ? ` · de ${esc(p.deSP.origem)} a partir de R$ ${reais(p.deSP.preco)}` : ''}</div>
       <div class="pesq tab">🔎 Preços pesquisados em ${dataHora(p.pesquisado)}</div>
     </div>
