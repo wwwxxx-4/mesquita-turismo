@@ -71,7 +71,14 @@ a { color: inherit; }
 .zap { display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; border: 1px solid #1FAF38; color: #13852A; font-weight: 700; border-radius: 10px; padding: 9px 8px; font-size: 14px; }
 /* calendario de datas (paginas de um post com DADOS.calendario) */
 .grade:has(.cal) { align-items: start; } /* abrir o calendario de um cartao nao estica os vizinhos */
-.cal summary { cursor: pointer; font-weight: 700; color: var(--azul); font-size: 14px; }
+/* o calendario E o botao principal do cartao (pedido dele em 14/10: estava escondido) */
+.cal summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--azul); color: #fff; font-weight: 700; font-size: 16px; border-radius: 10px; padding: 12px 10px; }
+.cal summary::-webkit-details-marker { display: none; }
+.cal summary:hover { background: var(--noite); }
+.cal summary .seta { transition: transform .2s; }
+.cal[open] summary { background: var(--noite); }
+.cal[open] summary .seta { transform: rotate(180deg); }
+.cal .dica { font-size: 13px; color: var(--tinta-2); margin: 8px 2px 0; }
 .cal .mes { font: 700 13px var(--cond); letter-spacing: .1em; text-transform: uppercase; color: var(--tinta-2); margin: 12px 0 4px; }
 .cal .dias { display: grid; gap: 4px; max-height: 320px; overflow: auto; }
 .cal a { display: flex; justify-content: space-between; gap: 8px; text-decoration: none; font-size: 13px; padding: 6px 9px; border-radius: 8px; background: var(--papel); }
@@ -140,13 +147,13 @@ function calendario(o) {
   if (!o.datas?.length) return '';
   const meses = new Map();
   for (const d of o.datas) { const k = d[0].slice(0, 7); if (!meses.has(k)) meses.set(k, []); meses.get(k).push(d); }
-  return `<details class="cal"><summary>Ver todas as datas (${o.datas.length})</summary>${[...meses].map(([k, ds]) => {
+  return `<details class="cal"><summary>📅 Ver datas e preços (${o.datas.length}) <span class="seta">▾</span></summary><div class="dica">Toque no dia para ver os voos no nosso site.</div>${[...meses].map(([k, ds]) => {
     const menor = Math.min(...ds.map((d) => d[2]));
     return `<div class="mes">${NOME_MES[Number(k.slice(5, 7)) - 1]} ${k.slice(0, 4)}</div><div class="dias">${ds.map((d) => `<a href="${esc(o.linkModelo.replace('{IDA}', d[0]).replace('{VOLTA}', d[1]))}" target="_blank" rel="noopener" class="tab${d[2] === menor ? ' barato' : ''}"><span>${semana(d[0])} ${dia(d[0])} → ${dia(d[1])}</span><b>R$ ${reais(d[2])}</b></a>`).join('')}</div>`;
   }).join('')}</details>`;
 }
 if (SEM && !CAL) document.getElementById('ordem').options[0].textContent = 'Melhores ofertas';
-document.getElementById('sub').textContent = CAL ? `${ofertas.length} cidades de saída com preço por pessoa, ida e volta. Em cada uma, abra "Ver todas as datas" e clique no dia para ver os voos no nosso site, ou chame a gente no WhatsApp.` : SEM ? `${ofertas.length} opções de ida e volta, saindo de ${new Set(ofertas.map((o) => o.origem)).size} cidades. Clique em "Ver voos e preços" para abrir a busca com as datas já preenchidas e ver o valor atualizado, ou chame a gente no WhatsApp.` : `${ofertas.length} promoç${ofertas.length === 1 ? 'ão' : 'ões'} de ida e volta, com preço por pessoa já com as taxas. Clique em "Ver voos e comprar" para abrir a busca com as datas já preenchidas, ou chame a gente no WhatsApp.`;
+document.getElementById('sub').textContent = CAL ? `${ofertas.length} cidades de saída com preço por pessoa, ida e volta. Em cada uma, toque em "Ver datas e preços" e escolha o dia para ver os voos no nosso site, ou chame a gente no WhatsApp.` : SEM ? `${ofertas.length} opções de ida e volta, saindo de ${new Set(ofertas.map((o) => o.origem)).size} cidades. Clique em "Ver voos e preços" para abrir a busca com as datas já preenchidas e ver o valor atualizado, ou chame a gente no WhatsApp.` : `${ofertas.length} promoç${ofertas.length === 1 ? 'ão' : 'ões'} de ida e volta, com preço por pessoa já com as taxas. Clique em "Ver voos e comprar" para abrir a busca com as datas já preenchidas, ou chame a gente no WhatsApp.`;
 if (DADOS.titulo) document.getElementById('titulo').innerHTML = `Passagens para <em>${esc(DADOS.titulo)}</em> em promoção`;
 if (DADOS.titulo) document.getElementById('especiais').querySelector('span').textContent = 'Outras promoções';
 if (new Set(ofertas.map((o) => o.destino)).size < 2) document.getElementById('f-destino').hidden = true;
@@ -179,7 +186,7 @@ function card(o) {
       <div class="precos">${CAL ? `<div class="apartir">a partir de</div><div class="preco tab"><small>R$</small>${reais(o.preco)}</div><div class="det">por pessoa · ida e volta com taxas</div>` : SEM ? '<div class="det">Preço por pessoa, ida e volta com taxas, atualizado na hora no nosso site</div>' : `<div class="preco tab"><small>R$</small>${reais(o.preco)}</div><div class="det">por pessoa · ida e volta com taxas</div>`}</div>
       ${CAL ? calendario(o) : ''}
       <div class="acoes">
-        <a class="comprar" href="${esc(o.link)}" target="_blank" rel="noopener">${SEM ? 'Ver voos e preços' : 'Ver voos e comprar'}</a>
+        ${CAL ? '' : `<a class="comprar" href="${esc(o.link)}" target="_blank" rel="noopener">${SEM ? 'Ver voos e preços' : 'Ver voos e comprar'}</a>`}
         <div class="zaps">${ATENDENTES.map((a) => `<a class="zap" href="${linkWhats(a.numero, texto(a.nome))}" target="_blank" rel="noopener">${ZAP}${esc(a.nome)}</a>`).join('')}</div>
       </div>
     </div>
