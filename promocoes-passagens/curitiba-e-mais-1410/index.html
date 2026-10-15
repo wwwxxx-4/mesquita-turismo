@@ -185,7 +185,7 @@ function card(o) {
     <div class="corpo">
       <div class="voo tab"><div><b>${dia(o.ida)} → ${dia(o.volta)}</b> · ${o.noites} dia${o.noites === 1 ? '' : 's'}</div><div>${CAL ? `${esc(o.cia)} · data mais em conta` : SEM ? `${esc(o.cia)} · horários e voos no site` : `${esc(o.cia)} · ida às ${esc(o.idaSai)} · volta às ${esc(o.voltaSai)}`}</div></div>
       ${SEM ? '' : `<div class="tags">${o.direto ? '<span class="tag">Voo direto</span>' : ''}${o.bagagem ? '<span class="tag">Com mala despachada</span>' : '<span class="tag">Bagagem de mão</span>'}</div>`}
-      <div class="precos">${CAL ? `<div class="apartir">a partir de</div><div class="preco tab"><small>R$</small>${reais(o.preco)}</div><div class="det">por pessoa · ida e volta com taxas</div>` : SEM ? '<div class="det">Preço por pessoa, ida e volta com taxas, atualizado na hora no nosso site</div>' : `<div class="preco tab"><small>R$</small>${reais(o.preco)}</div><div class="det">por pessoa · ida e volta com taxas</div>`}</div>
+      <div class="precos">${CAL ? `<div class="apartir">a partir de</div><div class="preco tab"><small>R$</small>${reais(o.preco)}</div><div class="det">por pessoa ida e volta sem taxas*</div>` : SEM ? '<div class="det">Preço por pessoa, ida e volta com taxas, atualizado na hora no nosso site</div>' : `<div class="preco tab"><small>R$</small>${reais(o.preco)}</div><div class="det">por pessoa · ida e volta com taxas</div>`}</div>
       ${CAL ? calendario(o) : ''}
       <div class="acoes">
         ${CAL ? '' : `<a class="comprar" href="${esc(o.link)}" target="_blank" rel="noopener">${SEM ? 'Ver voos e preços' : 'Ver voos e comprar'}</a>`}
@@ -206,7 +206,7 @@ function desenhar() {
 desenhar();
 
 document.getElementById('rodape').innerHTML = `
-  <div>${CAL ? `Preços por pessoa, ida e volta, com taxas, pesquisados em ${esc(DADOS.consultado)} para as datas mostradas.` : SEM ? `Datas selecionadas em ${esc(DADOS.consultado)} entre as mais em conta para cada saída. O preço é o que aparece no nosso site na hora da busca.` : `Preços por pessoa, ida e volta, com taxas, conferidos em ${esc(DADOS.consultado)} para as datas mostradas.`} Passagem aérea muda de preço a qualquer momento: o valor final é o que aparecer na hora da compra. Sujeito a disponibilidade.</div>
+  <div>${CAL ? `Preços por pessoa, ida e volta, pesquisados em ${esc(DADOS.consultado)} para as datas mostradas. *Taxas de embarque não incluídas: o valor final, com as taxas, aparece no nosso site na hora da compra.` : SEM ? `Datas selecionadas em ${esc(DADOS.consultado)} entre as mais em conta para cada saída. O preço é o que aparece no nosso site na hora da busca.` : `Preços por pessoa, ida e volta, com taxas, conferidos em ${esc(DADOS.consultado)} para as datas mostradas.`} Passagem aérea muda de preço a qualquer momento: o valor final é o que aparecer na hora da compra. Sujeito a disponibilidade.</div>
   <div>Mesquita Turismo · WhatsApp ${ATENDENTES.map((a) => `${esc(a.nome)} ${esc(a.exibicao)}`).join(' · ')}</div>`;
 </script>
 </body>

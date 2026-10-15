@@ -115,7 +115,7 @@ document.getElementById('lista').innerHTML = lista.map((p) => `
     <div class="preco-box">
       <div class="apartir">${p.ativa ? 'a partir de' : 'era a partir de'}</div>
       <div class="preco tab"><small>R$</small>${reais(p.aPartirDe)}</div>
-      <div class="det">por pessoa · ida e volta com taxas</div>
+      <div class="det">por pessoa ida e volta sem taxas*</div>
       <span class="ver">${p.ativa ? 'Ver datas e preços' : 'Ver como estava'}</span>
     </div>
   </a>`).join('');
@@ -124,7 +124,7 @@ document.getElementById('paginas').innerHTML = total < 2 ? '' : Array.from({ len
   .map((n) => `<a href="?pagina=${n}"${n === pagina ? ' aria-current="page"' : ''}>${n}</a>`).join('');
 document.getElementById('rodape').innerHTML = `
   <div>Cada promoção fica ativa por até 4 dias e tem os preços pesquisados de novo todo dia de manhã; depois disso fica aqui como encerrada, com a data da última pesquisa. Promoção de "só hoje" vale apenas no dia em que saiu.</div>
-  <div>Preços por pessoa, ida e volta, com taxas, na data e hora da pesquisa. Passagem aérea muda de preço a qualquer momento: o valor final é o que aparecer na hora da compra. Sujeito a disponibilidade.</div>
+  <div>Preços por pessoa, ida e volta, na data e hora da pesquisa. *Taxas de embarque não incluídas: o valor final, com as taxas, aparece no nosso site na hora da compra. Passagem aérea muda de preço a qualquer momento: o valor final é o que aparecer na hora da compra. Sujeito a disponibilidade.</div>
   <div>Mesquita Turismo · WhatsApp ${DADOS.atendentes.map((a) => `${esc(a.nome)} ${esc(a.exibicao)}`).join(' · ')}</div>`;
 </script>
 </body>
