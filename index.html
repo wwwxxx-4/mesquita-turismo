@@ -381,6 +381,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .hero-stats{display:flex;justify-content:center;gap:48px;margin-top:64px;flex-wrap:wrap}
 .hstat{text-align:center}
 .hstat-n{font-size:32px;font-weight:900;color:var(--blue);line-height:1;font-family:var(--f)}
+/* Passagens em Promocao na home (19/10/2026): botao laranja com contador + cartoes das
+   promocoes do dia. O bloco entre os marcadores promos-home e regravado pela rotina das
+   promocoes (cotador/promocoes-md/diario.js). */
+.btn-promo{background:#E8590C!important;position:relative}
+.btn-promo:hover{background:#C2410C!important;box-shadow:0 6px 32px rgba(232,89,12,.4)!important}
+.promo-novas{position:absolute;top:-10px;right:-6px;background:#FFD43B;color:#7A2E00;font-size:11px;font-weight:800;border-radius:100px;padding:3px 8px;box-shadow:0 2px 8px rgba(0,0,0,.15);white-space:nowrap}
+.promos-home{max-width:1100px;margin:48px auto 0;text-align:left}
+.promos-home-topo{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.promos-home-topo h2{font-family:var(--f);font-size:clamp(22px,3vw,30px);font-weight:900;color:var(--dark);margin:0}
+.promos-home-topo h2 span{color:#E8590C}
+.promos-home-topo a{color:var(--blue);font-weight:700;text-decoration:none}
+.promos-home-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:14px}
+.promo-card{display:flex;flex-direction:column;background:#fff;border:1px solid #DCE5EE;border-radius:14px;overflow:hidden;text-decoration:none;color:var(--dark);transition:transform .15s}
+.promo-card:hover{transform:translateY(-3px);border-color:#E8590C}
+.promo-card-faixa{background:linear-gradient(135deg,#0B2440,#1072B9);color:#fff;padding:16px 16px 14px;min-height:150px;display:flex;flex-direction:column;justify-content:flex-end}
+.promo-card-faixa b{font-family:var(--f);font-size:22px;font-weight:900;line-height:1.05}
+.promo-card-faixa small{opacity:.85;font-size:12px;margin-top:4px}
+.promo-card-corpo{padding:12px 16px 14px;display:grid;gap:4px}
+.promo-card-preco{font-family:var(--f);font-size:28px;font-weight:900;color:#E8590C;line-height:1}
+.promo-card-det{font-size:12px;color:var(--muted)}
+.promo-card-tag{display:inline-block;background:#B8860B;color:#fff;font-size:11px;font-weight:700;border-radius:100px;padding:2px 8px;justify-self:start}
 .hstat-l{font-size:12px;color:var(--light);margin-top:5px;letter-spacing:.05em;text-transform:uppercase}
 
 /* ── SECTION BASE ── */
@@ -624,9 +645,10 @@ a.partner-card:hover .partner-logo{filter:grayscale(0%)}
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
       Voos FRETE em Oferta
     </a>
-    <a href="/promocoes-passagens/" class="btn-primary">
+    <a href="/promocoes-passagens/" class="btn-primary btn-promo">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
       Passagens em Promoção
+      <!--promos-n--><span class="promo-novas">1 nova hoje</span><!--/promos-n-->
     </a>
     <a href="/resorts-brasil/" class="btn-primary">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -641,6 +663,7 @@ a.partner-card:hover .partner-logo{filter:grayscale(0%)}
       Encontrar pacotes
     </a>
   </div>
+  <!--promos-home:inicio--><div class="promos-home"><div class="promos-home-topo"><h2>✈️ Passagens em <span>Promoção</span> hoje</h2><a href="/promocoes-passagens/">Ver todas (11) →</a></div><div class="promos-home-grade"><a class="promo-card" href="/promocoes-passagens/paris-1910/"><div class="promo-card-faixa" style="background-image:linear-gradient(180deg,rgba(11,36,64,.05) 30%,rgba(11,36,64,.85)),url('/promocoes-passagens/fotos/PAR.jpg');background-size:cover;background-position:center"><b>Paris</b><small>saindo de São Paulo</small></div><div class="promo-card-corpo"><span class="promo-card-det">ida e volta a partir de</span><span class="promo-card-preco">R$ 4.372</span><span class="promo-card-det">por pessoa, com taxas · conferido em 19/10 às 12:47</span></div></a><a class="promo-card" href="/promocoes-passagens/rio-de-janeiro-1810/"><div class="promo-card-faixa" style="background-image:linear-gradient(180deg,rgba(11,36,64,.05) 30%,rgba(11,36,64,.85)),url('/promocoes-passagens/fotos/GIG.jpg');background-size:cover;background-position:center"><b>Rio de Janeiro</b><small>saindo de São Paulo</small></div><div class="promo-card-corpo"><span class="promo-card-det">ida e volta a partir de</span><span class="promo-card-preco">R$ 473</span><span class="promo-card-det">por pessoa, com taxas · conferido em 19/10 às 12:32</span></div></a><a class="promo-card" href="/promocoes-passagens/uberlandia-e-mais-1710/"><div class="promo-card-faixa" style="background-image:linear-gradient(180deg,rgba(11,36,64,.05) 30%,rgba(11,36,64,.85)),url('/promocoes-passagens/fotos/GIG.jpg');background-size:cover;background-position:center"><b>Rio de Janeiro, Porto Alegre e mais 7 destinos</b><small>saindo de São Paulo</small></div><div class="promo-card-corpo"><span class="promo-card-det">ida e volta a partir de</span><span class="promo-card-preco">R$ 545</span><span class="promo-card-det">por pessoa, com taxas · conferido em 19/10 às 11:50</span></div></a><a class="promo-card" href="/promocoes-passagens/lisboa-e-mais-1610/"><div class="promo-card-faixa" style="background-image:linear-gradient(180deg,rgba(11,36,64,.05) 30%,rgba(11,36,64,.85)),url('/promocoes-passagens/fotos/ROM.jpg');background-size:cover;background-position:center"><b>Roma, Milão e mais 18 destinos</b><small>saindo de São Paulo</small></div><div class="promo-card-corpo"><span class="promo-card-tag">Classe executiva</span><span class="promo-card-det">ida e volta a partir de</span><span class="promo-card-preco">R$ 12.158</span><span class="promo-card-det">por pessoa, com taxas · conferido em 19/10 às 12:48</span></div></a></div></div><!--promos-home:fim-->
   <div class="hero-stats">
     <div class="hstat"><div class="hstat-n">10+</div><div class="hstat-l">Anos de mercado</div></div>
     <div class="hstat"><div class="hstat-n">11k+</div><div class="hstat-l">Viajantes atendidos</div></div>
