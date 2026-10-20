@@ -234,4 +234,16 @@
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.mesquitaturismo.com.br/promocoes-passagens/lisboa-e-mais-2010/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.mesquitaturismo.com.br/promocoes-passagens/buenos-aires-2010/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
