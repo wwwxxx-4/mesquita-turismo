@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Passagens para Cairo em promoção · Mesquita Turismo</title>
+<meta name="description" content="Promoções de passagens aéreas ida e volta com preço conferido no dia. Compre no site da Mesquita Turismo ou fale com a gente no WhatsApp.">
+<meta property="og:title" content="Passagens para Cairo em promoção · Mesquita Turismo">
+<meta property="og:description" content="Passagens ida e volta em promoção, com preço por pessoa conferido no dia.">
+<meta property="og:image" content="https://www.mesquitaturismo.com.br/passagens-em-oferta/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.mesquitaturismo.com.br/promocoes-passagens/cairo-2310/">
+<link rel="canonical" href="https://www.mesquitaturismo.com.br/promocoes-passagens/cairo-2310/">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/identidade.css">
+<style>
+/* Mesma linguagem da /passagens-em-oferta/: azul do logo, preco em azul,
+   cards brancos sem sombra. Aqui nao ha comparacao com outro site: so o
+   preco da Mesquita, conferido no dia, e o link para comprar. */
+:root {
+  --azul: #1072B9; --azul-claro: #55B5E5; --azul-bg: #EAF5FC; --noite: #0B2440;
+  --papel: #F5F8FB; --folha: #FFFFFF; --tinta: #10233B; --tinta-2: #55657C; --linha: #DCE5EE;
+  --verde: #138A55; --verde-bg: #E3F5EC;
+  --cond: 'Barlow Condensed', 'Arial Narrow', sans-serif; --txt: 'Barlow', 'Segoe UI', system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 16px/1.5 var(--txt); }
+a { color: inherit; }
+.tab { font-variant-numeric: tabular-nums; }
+.topo { position: sticky; top: 0; z-index: 10; background: var(--folha); border-bottom: 1px solid var(--linha); padding: calc(env(safe-area-inset-top, 0px) + 10px) 16px 10px; }
+.topo .in { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.topo img { height: 44px; display: block; }
+.atendentes { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.btn-whats { display: inline-flex; align-items: center; gap: 8px; background: #1FAF38; color: #fff; text-decoration: none; font-weight: 700; border-radius: 999px; padding: 8px 14px; white-space: nowrap; font-size: 15px; }
+.btn-whats small { font-weight: 500; opacity: .92; }
+.btn-whats svg, .zap svg { width: 18px; height: 18px; fill: currentColor; flex: none; }
+.pagina { max-width: 1160px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 48px; }
+.hero h1 { font: 800 clamp(34px, 6vw, 58px)/1 var(--cond); margin: 0; text-wrap: balance; color: var(--noite); }
+.hero h1 em { font-style: normal; color: var(--azul); }
+.hero p { color: var(--tinta-2); margin: 10px 0 0; max-width: 70ch; }
+.selo { display: inline-flex; gap: 6px; align-items: center; background: var(--verde-bg); color: var(--verde); font-weight: 700; font-size: 14px; border-radius: 999px; padding: 5px 12px; margin-top: 12px; }
+.filtros { display: grid; gap: 10px; margin-top: 22px; }
+.linha-f { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.linha-f > span { font: 700 13px var(--cond); letter-spacing: .12em; text-transform: uppercase; color: var(--tinta-2); margin-right: 4px; }
+.chip { border: 1px solid var(--linha); background: var(--folha); color: var(--tinta); border-radius: 999px; padding: 6px 13px; font: 500 14px var(--txt); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--azul); border-color: var(--azul); color: #fff; }
+.contagem { color: var(--tinta-2); font-size: 14px; }
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 16px; margin-top: 18px; }
+.card { background: var(--folha); border: 1px solid var(--linha); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.faixa { background: linear-gradient(120deg, var(--noite), var(--azul)); color: #fff; padding: 16px 16px 14px; }
+.faixa h2 { font: 800 32px/1 var(--cond); margin: 0; }
+.faixa .rota { font-size: 14px; opacity: .9; margin-top: 4px; }
+.corpo { padding: 14px 16px 16px; display: grid; gap: 10px; flex: 1; }
+.voo { font-size: 14px; display: grid; gap: 2px; }
+.voo b { font-weight: 600; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { background: var(--azul-bg); color: var(--azul); font-size: 12px; font-weight: 600; border-radius: 999px; padding: 2px 9px; }
+.precos { border-top: 1px dashed var(--linha); padding-top: 10px; margin-top: auto; }
+.preco { font: 800 40px/1 var(--cond); color: var(--azul); }
+.preco small { font-size: 20px; margin-right: 3px; }
+.det { font-size: 12px; color: var(--tinta-2); }
+.parc { font-size: 13px; margin-top: 3px; }
+.acoes { display: grid; gap: 8px; }
+.comprar { display: flex; align-items: center; justify-content: center; text-decoration: none; background: var(--azul); color: #fff; font-weight: 700; border-radius: 10px; padding: 11px 8px; }
+.comprar:hover { background: var(--noite); }
+.zaps { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+.zap { display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; border: 1px solid #1FAF38; color: #13852A; font-weight: 700; border-radius: 10px; padding: 9px 8px; font-size: 14px; }
+/* calendario de datas (paginas de um post com DADOS.calendario) */
+.grade:has(.cal) { align-items: start; } /* abrir o calendario de um cartao nao estica os vizinhos */
+/* o calendario E o botao principal do cartao (pedido dele em 14/10: estava escondido) */
+.logo-cia { width: 34px; height: 34px; object-fit: contain; border-radius: 6px; vertical-align: middle; margin-right: 8px; background: #fff; border: 1px solid var(--linha); padding: 2px; }
+.cal-dia { display: inline-flex; align-items: center; }
+.cal summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--azul); color: #fff; font-weight: 700; font-size: 16px; border-radius: 10px; padding: 12px 10px; }
+.cal summary::-webkit-details-marker { display: none; }
+.cal summary:hover { background: var(--noite); }
+.cal summary .seta { transition: transform .2s; }
+.cal[open] summary { background: var(--noite); }
+.cal[open] summary .seta { transform: rotate(180deg); }
+.cal .dica { font-size: 13px; color: var(--tinta-2); margin: 8px 2px 0; }
+.cal .mes { font: 700 13px var(--cond); letter-spacing: .1em; text-transform: uppercase; color: var(--tinta-2); margin: 12px 0 4px; }
+.cal .dias { display: grid; gap: 4px; max-height: 320px; overflow: auto; }
+.cal a { display: flex; justify-content: space-between; gap: 8px; text-decoration: none; font-size: 13px; padding: 6px 9px; border-radius: 8px; background: var(--papel); }
+.cal a:hover { background: var(--azul-bg); }
+.cal a b { font-weight: 700; white-space: nowrap; }
+.cal a.barato b { color: var(--verde); }
+.apartir { font-size: 13px; color: var(--tinta-2); }
+.destaques { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.destaques span { background: var(--noite); color: #fff; font-weight: 700; font-size: 14px; border-radius: 999px; padding: 6px 13px; }
+.destaques span.forte { background: #B8860B; }
+.aviso-classe { margin-top: 12px; background: #FFF8E1; border: 1px solid #F0D27A; color: #5C4400; border-radius: 12px; padding: 10px 14px; font-size: 14px; max-width: 75ch; }
+.vazio { padding: 32px; text-align: center; color: var(--tinta-2); }
+.rodape { margin-top: 36px; border-top: 1px solid var(--linha); padding-top: 16px; color: var(--tinta-2); font-size: 13px; display: grid; gap: 8px; max-width: 90ch; }
+@media (max-width: 560px) { .topo img { height: 30px; } .btn-whats small { display: none; } .btn-whats { padding: 7px 11px; font-size: 14px; } }
+</style>
+</head>
+<body>
+<header class="topo"><div class="in">
+  <a href="/" title="Página inicial da Mesquita Turismo"><img src="/passagens-em-oferta/logo.png" alt="Mesquita Turismo"></a>
+  <div class="atendentes" id="atendentes"></div>
+</div></header>
+
+<main class="pagina"><!--encerrada-->
+  <div style="background:#FFF4E5;border:1px solid #F5C77E;color:#7A4B00;border-radius:12px;padding:12px 16px;margin-bottom:18px;font-weight:600">
+    ⚠️ Promoção encerrada em 23/10/2026. Os preços abaixo foram pesquisados em 23/10/2026 às 18:03 e podem não valer mais.
+    <a href="/promocoes-passagens/" style="color:#1072B9">Veja as promoções ativas</a>.
+  </div>
+  <section class="hero">
+    <h1 id="titulo">Promoções de <em>passagens aéreas</em></h1>
+    <p id="sub"></p>
+    <div class="destaques" id="destaques"></div>
+    <div class="aviso-classe" id="aviso-classe" hidden></div>
+    <div class="selo tab" id="selo"></div>
+  </section>
+
+  <nav class="linha-f" id="especiais" style="margin-top:18px" aria-label="Mais promoções"><a class="chip" href="/promocoes-passagens/" style="text-decoration:none">← Todas as passagens em promoção</a></nav>
+  <div class="filtros">
+    <div class="linha-f" id="f-origem"><span>Saindo de</span></div>
+    <div class="linha-f" id="f-destino"><span>Destino</span></div>
+    <div class="linha-f"><span>Ordem</span>
+      <select class="chip" id="ordem" aria-label="Ordenar">
+        <option value="preco">Menor preço</option>
+        <option value="data">Data da viagem</option>
+      </select>
+      <span class="contagem tab" id="contagem" style="margin-left:auto"></span>
+    </div>
+  </div>
+
+  <div class="grade" id="grade"></div>
+  <div class="vazio" id="vazio" hidden>Nenhuma promoção com esses filtros agora. Fale com a gente no WhatsApp que cotamos para você.</div>
+
+  <footer class="rodape" id="rodape"></footer>
+</main>
+
+<script>
+const DADOS = {"consultado":"23/10/2026 às 18:01","titulo":"Cairo","semPreco":true,"calendario":true,"precoSite":true,"ofertas":[],"atendentes":[{"nome":"Wester","numero":"5511953967095","exibicao":"(11) 95396-7095"}],"classe":"economica","destaques":[]};
+const ZAP = '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6-.3.4c.1.2.6 1 1.3 1.6.9.8 1.6 1 1.8 1.1.2.1.4.1.5-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg>';
+const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const reais = (v) => Math.round(v).toLocaleString('pt-BR');
+const dia = (iso) => `${Number(iso.slice(8, 10))} ${MESES[Number(iso.slice(5, 7)) - 1]} ${iso.slice(2, 4)}`;
+const ddmm = (iso) => `${iso.slice(8, 10)}/${iso.slice(5, 7)}/${iso.slice(0, 4)}`;
+const linkWhats = (numero, texto) => `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+const ATENDENTES = DADOS.atendentes;
+const ofertas = DADOS.ofertas;
+
+document.getElementById('atendentes').innerHTML = ATENDENTES.map((a) => `<a class="btn-whats" href="${linkWhats(a.numero, `Olá, ${a.nome}! Vi as promoções de passagens no site da Mesquita Turismo e quero mais informações.`)}" target="_blank" rel="noopener">${ZAP}${esc(a.nome)} <small class="tab">${esc(a.exibicao)}</small></a>`).join('');
+const SEM = !!DADOS.semPreco; // pagina so de links: o preco e o que o site mostrar na hora
+// Pagina de um destino so: o cartao diz a saida. Varios destinos: o cartao diz o destino.
+const UM_DESTINO = !!DADOS.titulo && new Set(DADOS.ofertas.map((o) => o.destino)).size === 1;
+const CAL = SEM && !!DADOS.calendario;
+const NOME_CIA = { G3: 'Gol', LA: 'Latam', JJ: 'Latam', AD: 'Azul', TP: 'TAP', AR: 'Aerolíneas Argentinas', CM: 'Copa', AV: 'Avianca', IB: 'Iberia', UX: 'Air Europa', AF: 'Air France', KL: 'KLM', AT: 'Royal Air Maroc', CA: 'Air China', BA: 'British Airways', DL: 'Delta', UA: 'United', AA: 'American', ET: 'Ethiopian', EK: 'Emirates', QR: 'Qatar Airways', TK: 'Turkish', LH: 'Lufthansa', LX: 'Swiss', AZ: 'ITA Airways', JA: 'JetSMART', H2: 'Sky', AM: 'Aeroméxico', AC: 'Air Canada', EY: 'Etihad' };
+const SITE = !!DADOS.precoSite; // preco do nosso site (com taxas), conferido - 19/10 // ...com o preco pesquisado e o calendario de datas de cada saida
+const NOME_MES = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+const semana = (iso) => ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'][new Date(iso + 'T12:00:00Z').getUTCDay()];
+function calendario(o) {
+  if (!o.datas?.length) return '';
+  const meses = new Map();
+  for (const d of o.datas) { const k = d[0].slice(0, 7); if (!meses.has(k)) meses.set(k, []); meses.get(k).push(d); }
+  return `<details class="cal"><summary>📅 Ver datas e preços (${o.datas.length}) <span class="seta">▾</span></summary><div class="dica">Toque no dia para ver os voos no nosso site. <b>✓</b> = preço conferido no nosso site · <b>≈</b> = estimado pelas datas conferidas.</div>${[...meses].map(([k, ds]) => {
+    const menor = Math.min(...ds.filter((d) => d[3] !== 0).map((d) => d[2]));
+    return `<div class="mes">${NOME_MES[Number(k.slice(5, 7)) - 1]} ${k.slice(0, 4)}</div><div class="dias">${ds.map((d) => `<a href="${esc(o.linkModelo.replace('{IDA}', d[0]).replace('{VOLTA}', d[1]))}" target="_blank" rel="noopener" class="tab${d[2] === menor ? ' barato' : ''}"><span class="cal-dia">${d[4] ? `<img class="logo-cia" src="https://pics.avs.io/100/100/${esc(d[4])}.png" alt="${esc(NOME_CIA[d[4]] || d[4])}" title="${esc(NOME_CIA[d[4]] || d[4])}" loading="lazy">` : ''}${semana(d[0])} ${dia(d[0])} → ${dia(d[1])}</span><b>${d[3] === 0 ? '≈ ' : ''}R$ ${reais(d[2])}${d[3] === 0 ? '' : ' ✓'}</b></a>`).join('')}</div>`;
+  }).join('')}</details>`;
+}
+if (SEM && !CAL) document.getElementById('ordem').options[0].textContent = 'Melhores ofertas';
+document.getElementById('sub').textContent = CAL ? `${ofertas.length} cidades de saída com preço por pessoa, ida e volta. Em cada uma, toque em "Ver datas e preços" e escolha o dia para ver os voos no nosso site, ou chame a gente no WhatsApp.` : SEM ? `${ofertas.length} opções de ida e volta, saindo de ${new Set(ofertas.map((o) => o.origem)).size} cidades. Clique em "Ver voos e preços" para abrir a busca com as datas já preenchidas e ver o valor atualizado, ou chame a gente no WhatsApp.` : `${ofertas.length} promoç${ofertas.length === 1 ? 'ão' : 'ões'} de ida e volta, com preço por pessoa já com as taxas. Clique em "Ver voos e comprar" para abrir a busca com as datas já preenchidas, ou chame a gente no WhatsApp.`;
+if (DADOS.titulo) document.getElementById('titulo').innerHTML = DADOS.classe === 'executiva'
+  ? `Passagens em <em>classe executiva</em> para ${esc(DADOS.titulo)}` : `Passagens para <em>${esc(DADOS.titulo)}</em> em promoção`;
+// O que se entendeu do texto da promocao (classe, mala, voos diretos, cia) - 19/10
+document.getElementById('destaques').innerHTML = (DADOS.destaques || []).map((d) => `<span${/executiva|premium/i.test(d) ? ' class="forte"' : ''}>${esc(d)}</span>`).join('');
+if (DADOS.classe === 'executiva' || DADOS.classe === 'premium') {
+  const av = document.getElementById('aviso-classe'); av.hidden = false;
+  av.innerHTML = `<b>Preços em ${DADOS.classe === 'executiva' ? 'classe executiva' : 'econômica premium'}.</b> Ao abrir a busca no nosso site, toque em <b>Ordenar e Filtrar</b> → <b>Classes</b> → <b>${DADOS.classe === 'executiva' ? 'Executiva' : 'Econômica premium'}</b> para ver só esses voos, ou chame a gente no WhatsApp que montamos para você.`;
+}
+if (new Set(ofertas.map((o) => o.destino)).size < 2) document.getElementById('f-destino').hidden = true;
+document.getElementById('selo').textContent = SITE ? `✓ Preços do nosso site conferidos em ${DADOS.consultado}` : CAL ? `✓ Preços pesquisados em ${DADOS.consultado}` : SEM ? `✓ Datas selecionadas em ${DADOS.consultado}` : `✓ Preços conferidos em ${DADOS.consultado}`;
+
+const estado = { origem: 'todas', destino: 'todos' };
+function chips(id, chave, opcoes) {
+  const el = document.getElementById(id);
+  for (const [valor, rotulo] of opcoes) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip'; b.textContent = rotulo; b.dataset.v = valor;
+    b.setAttribute('aria-pressed', String(estado[chave] === valor));
+    b.addEventListener('click', () => { estado[chave] = valor; el.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.v === valor))); desenhar(); });
+    el.appendChild(b);
+  }
+}
+chips('f-origem', 'origem', [['todas', 'Todas'], ...[...new Map(ofertas.map((o) => [o.origem, o.origemNome])).entries()]]);
+chips('f-destino', 'destino', [['todos', 'Todos'], ...[...new Map(ofertas.map((o) => [o.destino, o.cidade])).entries()]]);
+document.getElementById('ordem').addEventListener('change', desenhar);
+
+function card(o) {
+  const texto = (nome) => `Olá, ${nome}! Quero a promoção ${o.origemNome} → ${o.cidade}, ida ${ddmm(o.ida)} e volta ${ddmm(o.volta)}, ${o.cia}${SEM && !CAL ? '' : `, por R$ ${reais(o.preco)} por pessoa`} (promoções do site).`;
+  return `<article class="card">
+    <div class="faixa">${UM_DESTINO
+      ? `<h2>Saindo de ${esc(o.origemNome)}</h2><div class="rota">${esc(o.origem)} → ${esc(o.cidade)} (${esc(o.destino)})</div>`
+      : `<h2>${esc(o.cidade)}</h2><div class="rota">saindo de ${esc(o.origemNome)} (${esc(o.origem)}) → ${esc(o.destino)}</div>`}</div>
+    <div class="corpo">
+      <div class="voo tab"><div><b>${dia(o.ida)} → ${dia(o.volta)}</b> · ${o.noites} dia${o.noites === 1 ? '' : 's'}</div><div>${CAL ? `${o.ciaCod ? `<img class="logo-cia" src="https://pics.avs.io/100/100/${esc(o.ciaCod)}.png" alt="" loading="lazy">` : ''}${esc(o.cia)} · data mais em conta` : SEM ? `${esc(o.cia)} · horários e voos no site` : `${esc(o.cia)} · ida às ${esc(o.idaSai)} · volta às ${esc(o.voltaSai)}`}</div></div>
+      ${SEM ? '' : `<div class="tags">${o.direto ? '<span class="tag">Voo direto</span>' : ''}${o.bagagem ? '<span class="tag">Com mala despachada</span>' : '<span class="tag">Bagagem de mão</span>'}</div>`}
+      <div class="precos">${CAL ? `<div class="apartir">a partir de${o.estimado ? ' (estimado)' : ''}</div><div class="preco tab"><small>${o.estimado ? '≈ ' : ''}R$</small>${reais(o.preco)}</div><div class="det">${SITE ? 'por pessoa · ida e volta com taxas' : 'por pessoa ida e volta sem taxas*'}</div>` : SEM ? '<div class="det">Preço por pessoa, ida e volta com taxas, atualizado na hora no nosso site</div>' : `<div class="preco tab"><small>R$</small>${reais(o.preco)}</div><div class="det">por pessoa · ida e volta com taxas</div>`}</div>
+      ${CAL ? calendario(o) : ''}
+      <div class="acoes">
+        ${CAL ? '' : `<a class="comprar" href="${esc(o.link)}" target="_blank" rel="noopener">${SEM ? 'Ver voos e preços' : 'Ver voos e comprar'}</a>`}
+        <div class="zaps">${ATENDENTES.map((a) => `<a class="zap" href="${linkWhats(a.numero, texto(a.nome))}" target="_blank" rel="noopener">${ZAP}${esc(a.nome)}</a>`).join('')}</div>
+      </div>
+    </div>
+  </article>`;
+}
+
+function desenhar() {
+  const ordem = document.getElementById('ordem').value;
+  const lista = ofertas.filter((o) => (estado.origem === 'todas' || o.origem === estado.origem) && (estado.destino === 'todos' || o.destino === estado.destino));
+  lista.sort(ordem === 'data' ? (a, b) => a.ida.localeCompare(b.ida) : (a, b) => (SEM && !CAL ? a.rank - b.rank : a.preco - b.preco));
+  document.getElementById('grade').innerHTML = lista.map(card).join('');
+  document.getElementById('vazio').hidden = lista.length > 0;
+  document.getElementById('contagem').textContent = `${lista.length} de ${ofertas.length}`;
+}
+desenhar();
+
+document.getElementById('rodape').innerHTML = `
+  <div>${SITE ? `Preços do nosso site, por pessoa, ida e volta, com taxas. Os marcados com ✓ foram conferidos no nosso site em ${esc(DADOS.consultado)}; os marcados com ≈ são estimados a partir dessas datas conferidas.` : CAL ? `Preços por pessoa, ida e volta, pesquisados em ${esc(DADOS.consultado)} para as datas mostradas. *Taxas de embarque não incluídas: o valor final, com as taxas, aparece no nosso site na hora da compra.` : SEM ? `Datas selecionadas em ${esc(DADOS.consultado)} entre as mais em conta para cada saída. O preço é o que aparece no nosso site na hora da busca.` : `Preços por pessoa, ida e volta, com taxas, conferidos em ${esc(DADOS.consultado)} para as datas mostradas.`} Passagem aérea muda de preço a qualquer momento: o valor final é o que aparecer na hora da compra. Sujeito a disponibilidade.</div>
+  <div>Mesquita Turismo · WhatsApp ${ATENDENTES.map((a) => `${esc(a.nome)} ${esc(a.exibicao)}`).join(' · ')}</div>`;
+</script>
+</body>
+</html>
