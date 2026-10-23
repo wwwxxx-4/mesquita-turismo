@@ -300,4 +300,28 @@
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.mesquitaturismo.com.br/promocoes-passagens/madri-e-barcelona-2210/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.mesquitaturismo.com.br/promocoes-passagens/buenos-aires-e-mais-2210/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.mesquitaturismo.com.br/promocoes-passagens/joanesburgo-e-cidade-do-cabo-2210/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.mesquitaturismo.com.br/promocoes-passagens/orlando-e-mais-2210/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
