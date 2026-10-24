@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "node scripts/build-pacotes.mjs"
+    "build": "node scripts/analytics.mjs && node scripts/build-pacotes.mjs"
   }
 }
+
