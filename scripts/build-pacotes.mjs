@@ -158,10 +158,14 @@ function buildJsonLd(rows) {
     return {
       '@type': 'ListItem',
       position: i + 1,
+      // TouristTrip, not Product: Product makes Google treat the package as a
+      // shop item and ask for reviews, GTIN, shipping and return policy.
       item: {
-        '@type': 'Product',
+        '@type': 'TouristTrip',
         name,
+        description: `Pacote de viagem para ${row.destino}${row.hotel ? ', hospedagem no ' + row.hotel : ''}${row.ida && row.volta ? `, de ${formatDateLoose(row.ida)} a ${formatDateLoose(row.volta)}` : ''}.`,
         image: row.cover_image_url || undefined,
+        provider: { '@id': 'https://www.mesquitaturismo.com.br/#organization' },
         offers: {
           '@type': 'Offer',
           priceCurrency: 'BRL',
