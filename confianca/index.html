@@ -38,6 +38,13 @@
 .passos{counter-reset:p;list-style:none;margin:18px 0;padding:0}
 .passos li{counter-increment:p;position:relative;padding-left:44px;margin-bottom:14px}
 .passos li::before{content:counter(p);position:absolute;left:0;top:1px;width:30px;height:30px;border-radius:50%;background:var(--azul-bg);border:1px solid var(--azul-borda);color:var(--azul);font-weight:700;text-align:center;line-height:28px;font-size:15px}
+/* notícia na imprensa: cartão inteiro clicável, abre a matéria original */
+.materia{display:block;background:var(--folha);border:1px solid var(--linha);border-left:4px solid var(--azul);border-radius:14px;padding:18px 20px;margin:14px 0 8px;color:var(--tinta)}
+.materia:hover{text-decoration:none;border-color:var(--azul-borda)}
+.materia .fonte{display:block;font-size:12.5px;font-weight:700;letter-spacing:.4px;color:var(--tinta-3);margin-bottom:6px}
+.materia .tit{display:block;font-family:var(--cond);font-size:22px;line-height:1.2;color:var(--noite);margin-bottom:8px}
+.materia .res{display:block;font-size:15.5px;margin-bottom:10px}
+.materia .ler{font-weight:700;color:var(--azul);font-size:15px}
 @media (max-width:620px){.provas{grid-template-columns:1fr}}
 </style>
 </head>
@@ -89,6 +96,14 @@
   <iframe src="https://www.google.com/maps?q=R.+Fl%C3%A1vio+Fongaro,+599,+S%C3%A3o+Bernardo+do+Campo+-+SP,+09726-430&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa do escritório da Mesquita Turismo em São Bernardo do Campo"></iframe>
 </div>
 
+<h2>Na mídia</h2>
+<a class="materia" href="https://www.panrotas.com.br/mercado/operadoras/2025/01/cvc-reune-agentes-campeoes-de-sp-em-tempos-como-esse-somos-porto-seguro_213888.html" target="_blank" rel="noopener">
+  <span class="fonte">PANROTAS · 30/01/2025</span>
+  <strong class="tit">CVC reúne agentes de viagens campeões de SP: "em tempos como esse, somos porto seguro"</strong>
+  <span class="res">A CVC Operadora homenageou 25 dos maiores vendedores do ABC e da capital paulista pela parceria em 2024, com visita ao Centro de Controle Operacional, em Santo André, e almoço de premiação. Westerlei Mesquita, da Business Tur (Mesquita Turismo), está entre os agentes no álbum de fotos da notícia.</span>
+  <span class="ler">Ler a notícia na Panrotas →</span>
+</a>
+
 <h2>Como a sua compra fica segura</h2>
 <ol class="passos">
   <li><strong>A passagem sai no seu nome, direto na companhia aérea.</strong> Assim que emitimos, você recebe o código da reserva (localizador).</li>
@@ -134,7 +149,7 @@
   </div>
 </footer>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://www.mesquitaturismo.com.br/"},{"@type":"ListItem","position":2,"name":"Pode confiar","item":"https://www.mesquitaturismo.com.br/confianca/"}]},{"@type":"WebPage","@id":"https://www.mesquitaturismo.com.br/confianca/","url":"https://www.mesquitaturismo.com.br/confianca/","name":"Pode confiar — Mesquita Turismo","inLanguage":"pt-BR","about":{"@id":"https://www.mesquitaturismo.com.br/#organization"}},{"@type":"TravelAgency","@id":"https://www.mesquitaturismo.com.br/#organization","name":"Mesquita Turismo","legalName":"Business Tur Viagens e Turismo","taxID":"22.114.950/0001-80","foundingDate":"2015","url":"https://www.mesquitaturismo.com.br/","logo":"https://www.mesquitaturismo.com.br/logo.png","telephone":"+55-11-95396-7095","sameAs":["https://www.instagram.com/mesquita.turismo","https://www.facebook.com/mesquitaturismo","https://www.tiktok.com/@mesquitaturismo"],"hasCredential":{"@type":"EducationalOccupationalCredential","name":"Cadastur — Agência de Turismo","credentialCategory":"Cadastro no Ministério do Turismo","recognizedBy":{"@type":"GovernmentOrganization","name":"Ministério do Turismo"},"validUntil":"2028-08-05","url":"https://www.mesquitaturismo.com.br/confianca/certificado-cadastur-mesquita-turismo.pdf"},"address":{"@type":"PostalAddress","streetAddress":"R. Flávio Fongaro, 599 - Sala 2, Jardim do Mar","addressLocality":"São Bernardo do Campo","addressRegion":"SP","postalCode":"09726-430","addressCountry":"BR"}}]}
+{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://www.mesquitaturismo.com.br/"},{"@type":"ListItem","position":2,"name":"Pode confiar","item":"https://www.mesquitaturismo.com.br/confianca/"}]},{"@type":"WebPage","@id":"https://www.mesquitaturismo.com.br/confianca/","url":"https://www.mesquitaturismo.com.br/confianca/","name":"Pode confiar — Mesquita Turismo","inLanguage":"pt-BR","about":{"@id":"https://www.mesquitaturismo.com.br/#organization"}},{"@type":"TravelAgency","@id":"https://www.mesquitaturismo.com.br/#organization","name":"Mesquita Turismo","legalName":"Business Tur Viagens e Turismo","taxID":"22.114.950/0001-80","foundingDate":"2015","url":"https://www.mesquitaturismo.com.br/","logo":"https://www.mesquitaturismo.com.br/logo.png","telephone":"+55-11-95396-7095","sameAs":["https://www.instagram.com/mesquita.turismo","https://www.facebook.com/mesquitaturismo","https://www.tiktok.com/@mesquitaturismo"],"hasCredential":{"@type":"EducationalOccupationalCredential","name":"Cadastur — Agência de Turismo","credentialCategory":"Cadastro no Ministério do Turismo","recognizedBy":{"@type":"GovernmentOrganization","name":"Ministério do Turismo"},"validUntil":"2028-08-05","url":"https://www.mesquitaturismo.com.br/confianca/certificado-cadastur-mesquita-turismo.pdf"},"subjectOf":{"@type":"NewsArticle","headline":"CVC reúne agentes de viagens campeões de SP: \"em tempos como esse, somos porto seguro\"","datePublished":"2025-01-30","url":"https://www.panrotas.com.br/mercado/operadoras/2025/01/cvc-reune-agentes-campeoes-de-sp-em-tempos-como-esse-somos-porto-seguro_213888.html","publisher":{"@type":"Organization","name":"PANROTAS"}},"address":{"@type":"PostalAddress","streetAddress":"R. Flávio Fongaro, 599 - Sala 2, Jardim do Mar","addressLocality":"São Bernardo do Campo","addressRegion":"SP","postalCode":"09726-430","addressCountry":"BR"}}]}
 </script>
 </body>
 </html>
