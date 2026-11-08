@@ -147,6 +147,7 @@ const DADOS = {"consultado":"07/10/2026","datas":"23 a 27 de novembro de 2026","
 const ZAP = '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6-.3.4c.1.2.6 1 1.3 1.6.9.8 1.6 1 1.8 1.1.2.1.4.1.5-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg>';
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const reais = (v) => Math.round(v).toLocaleString('pt-BR');
+const GUIAS = {'Transamerica Resort Comandatuba':'/transamerica-comandatuba/','Costão do Santinho Resort':'/costao-do-santinho/','Clara Arte Resort':'/clara-arte-inhotim/','Salinas Maceió All Inclusive Resort':'/salinas-maceio/'};
 const linkWhats = (n, t) => 'https://wa.me/' + n + '?text=' + encodeURIComponent(t);
 const A = DADOS.atendentes;
 document.getElementById('atendentes').innerHTML = A.map((a) => '<a class="btn-whats" href="' + linkWhats(a.numero, 'Olá, ' + a.nome + '! Vi a lista dos 30 melhores resorts do Brasil no site da Mesquita Turismo e quero cotar uma viagem.') + '" target="_blank" rel="noopener">' + ZAP + esc(a.nome) + ' <small class="tab">' + esc(a.exibicao) + '</small></a>').join('');
@@ -185,6 +186,7 @@ function card(x) {
     + '<div class="cols"><div><h3>O que tem</h3><ul>' + x.destaques.map((d) => '<li>' + esc(d) + '</li>').join('') + '</ul></div><div><h3>Pontos fortes</h3><ul>' + x.fortes.map((d) => '<li>' + esc(d) + '</li>').join('') + '</ul></div></div>'
     + '<div class="atencao"><b>Bom saber:</b> ' + esc(x.atencao) + '</div>'
     + (x.aeroporto ? '<div class="info"><span>✈ ' + esc(x.aeroporto) + '</span></div>' : '')
+    + (GUIAS[x.nome] || (/rio quente/i.test(x.nome) && '/rio-quente-hotel-pousada/') ? '<p class="guia"><a href="' + (GUIAS[x.nome] || '/rio-quente-hotel-pousada/') + '">Guia completo do hotel, com vídeo →</a></p>' : '')
     + '<div class="compra">' + precoHtml + '<div class="botoes">' + comprar + zap + '</div></div>'
     + (x.refs.length ? '<details class="fontes"><summary>Fontes</summary><ul>' + x.refs.map((r) => '<li><a href="' + esc(r.u) + '" target="_blank" rel="noopener nofollow">' + esc(r.d) + '</a></li>').join('') + '</ul></details>' : '')
     + '</div></article>';
