@@ -1,4 +1,14 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/pacotes", "destination": "https://viagem.mesquitaturismo.com.br/" },
+    { "source": "/pacotes/", "destination": "https://viagem.mesquitaturismo.com.br/" },
+    { "source": "/pacotes/:path*", "destination": "https://viagem.mesquitaturismo.com.br/:path*" },
+    { "source": "/destinos-images.json", "destination": "https://viagem.mesquitaturismo.com.br/destinos-images.json" },
+    { "source": "/logo-mesquita.png", "destination": "https://viagem.mesquitaturismo.com.br/logo-mesquita.png" },
+    { "source": "/aviao-fallback.jpg", "destination": "https://viagem.mesquitaturismo.com.br/aviao-fallback.jpg" },
+    { "source": "/api/pagamento", "destination": "https://viagem.mesquitaturismo.com.br/api/pagamento" },
+    { "source": "/api/reserva", "destination": "https://viagem.mesquitaturismo.com.br/api/reserva" }
+  ]
 }
