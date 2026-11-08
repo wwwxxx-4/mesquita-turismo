@@ -122,11 +122,32 @@ function replaceBetweenMarkers(html, startMarker, endMarker, newContent) {
   return html.replace(regex, startMarker + '\n' + newContent + '\n' + endMarker);
 }
 
+// 08/11/2026 (pedido do Wester: nada de banner de fornecedor no site). O repassador de
+// imagens da Azul Viagens (azulviagens.com.br/handlers/imageRequest.ashx?path=<foto>)
+// devolve o BANNER da Azul quando o endereço vem cortado (sem assinatura), e a
+// cover_image_url dos pacotes da Azul vem cortada. Usa a foto original do hotel; se o
+// que sobra ainda é da Azul (tela de carregamento etc.), tenta a imagem_destino.
+function fotoLimpa(u) {
+  try {
+    const x = new URL(String(u || '').trim());
+    if (/(^|\.)azulviagens\.com\.br$/.test(x.hostname) && /handlers/i.test(x.pathname)) {
+      const p = x.searchParams.get('path');
+      if (p && /^https?:\/\//.test(p)) return p;
+    }
+    return x.href;
+  } catch { return ''; }
+}
+const daMarca = (u) => !u || /azulviagens\.com\.br|cookielaw\.org/i.test(u);
+function fotoDoPacote(row) {
+  const opcoes = [row.cover_image_url, ...String(row.imagem_destino || '').split(/\n/)].map(fotoLimpa);
+  return opcoes.find((u) => !daMarca(u)) || '';
+}
+
 function buildCardHtml(row) {
   const destino = escapeHtml(row.destino || '');
   const hotel = row.hotel ? escapeHtml(row.hotel) : '';
   const regiao = row.regiao ? escapeHtml(row.regiao) : 'Pacote';
-  const coverImage = escapeHtml(row.cover_image_url || '');
+  const coverImage = escapeHtml(fotoDoPacote(row));
 
   const formattedPrice = new Intl.NumberFormat('pt-BR', {
     style: 'currency',
@@ -164,7 +185,7 @@ function buildJsonLd(rows) {
         '@type': 'TouristTrip',
         name,
         description: `Pacote de viagem para ${row.destino}${row.hotel ? ', hospedagem no ' + row.hotel : ''}${row.ida && row.volta ? `, de ${formatDateLoose(row.ida)} a ${formatDateLoose(row.volta)}` : ''}.`,
-        image: row.cover_image_url || undefined,
+        image: fotoDoPacote(row) || undefined,
         provider: { '@id': 'https://www.mesquitaturismo.com.br/#organization' },
         offers: {
           '@type': 'Offer',
@@ -199,7 +220,7 @@ async function main() {
 
   const endpoint =
     `${SUPABASE_URL}/rest/v1/posts` +
-    `?select=slug,title,destino,hotel,preco,ida,volta,regiao,cover_image_url` +
+    `?select=slug,title,destino,hotel,preco,ida,volta,regiao,cover_image_url,imagem_destino` +
     `&status=eq.published` +
     `&order=published_at.desc` +
     `&limit=9`;
