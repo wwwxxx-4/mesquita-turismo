@@ -46,5 +46,37 @@
       "source": "/seguro-viagem/:path+",
       "destination": "https://seguros.mesquitaturismo.com.br/seguro-viagem/:path+"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/hoteis.html",
+      "destination": "/resorts-brasil/",
+      "permanent": true
+    },
+    {
+      "source": "/english.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/promocoes-passagens/undefined",
+      "destination": "/promocoes-passagens/",
+      "permanent": true
+    },
+    {
+      "source": "/promocoes-passagens/undefined/",
+      "destination": "/promocoes-passagens/",
+      "permanent": true
+    },
+    {
+      "source": "/:pagina/img",
+      "destination": "/:pagina/",
+      "permanent": true
+    },
+    {
+      "source": "/:pagina/img/",
+      "destination": "/:pagina/",
+      "permanent": true
+    }
   ]
 }
