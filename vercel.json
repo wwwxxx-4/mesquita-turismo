@@ -39,8 +39,12 @@
       "destination": "https://seguros.mesquitaturismo.com.br/seguro-viagem"
     },
     {
-      "source": "/seguro-viagem/:path*",
-      "destination": "https://seguros.mesquitaturismo.com.br/seguro-viagem/:path*"
+      "source": "/seguro-viagem/",
+      "destination": "https://seguros.mesquitaturismo.com.br/seguro-viagem"
+    },
+    {
+      "source": "/seguro-viagem/:path+",
+      "destination": "https://seguros.mesquitaturismo.com.br/seguro-viagem/:path+"
     }
   ]
 }
