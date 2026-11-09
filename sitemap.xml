@@ -712,4 +712,10 @@
     <loc>https://www.mesquitaturismo.com.br/hotel-unique-sao-paulo/</loc>
     <lastmod>2026-11-08</lastmod>
   </url>
+  <url>
+    <loc>https://www.mesquitaturismo.com.br/litoral-norte-bahia/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
