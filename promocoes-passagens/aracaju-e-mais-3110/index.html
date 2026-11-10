@@ -244,10 +244,22 @@ function aplicarConferencias(linhas) {
   ofertas.splice(0, ofertas.length, ...ofertas.filter((o) => !o.datas || o.datas.length));
   return mudou;
 }
+// 10/11: o Supabase devolve no maximo 1000 linhas por pedido; promocao com mais conferidas
+// perdia o resto (as de SP ficavam sem ✓). Agora pede de 1000 em 1000 ate acabar.
+async function conferencias() {
+  const todas = [];
+  for (let de = 0; de < 50000; de += 1000) {
+    const r = await fetch(`${DADOS.sb.url}/rest/v1/promocoes_tarifas?select=origem,destino,ida,volta,preco_site,ok,vazio,cia_iata,conferido_em&slug=eq.${encodeURIComponent(DADOS.slug)}&conferido_por=neq.rotina&conferido_em=not.is.null&order=id&offset=${de}&limit=1000`,
+      { headers: { apikey: DADOS.sb.anon, Authorization: `Bearer ${DADOS.sb.anon}` } });
+    const lote = r.ok ? await r.json() : [];
+    if (!Array.isArray(lote)) break;
+    todas.push(...lote);
+    if (lote.length < 1000) break;
+  }
+  return todas;
+}
 if (DADOS.sb && DADOS.slug) {
-  fetch(`${DADOS.sb.url}/rest/v1/promocoes_tarifas?select=origem,destino,ida,volta,preco_site,ok,vazio,cia_iata,conferido_em&slug=eq.${encodeURIComponent(DADOS.slug)}&conferido_por=neq.rotina&conferido_em=not.is.null`,
-    { headers: { apikey: DADOS.sb.anon, Authorization: `Bearer ${DADOS.sb.anon}` } })
-    .then((r) => (r.ok ? r.json() : []))
+  conferencias()
     .then((linhas) => {
       if (!Array.isArray(linhas) || !aplicarConferencias(linhas)) return;
       desenhar();
