@@ -113,21 +113,21 @@ document.getElementById('lista').innerHTML = lista.map((p) => `
     <div>
       <h2>${p.classe === 'executiva' ? 'Passagens em classe executiva para ' : 'Passagens para '}${esc(p.titulo)}${p.ativa ? '' : `<span class="status encerrada">Encerrada em ${dataCurta(p.encerrada)}</span>`}</h2>
       ${(p.destaques || []).length ? `<div class="tags">${p.destaques.map((d) => `<span class="tag${/executiva|premium/i.test(d) ? ' forte' : ''}">${esc(d)}</span>`).join('')}</div>` : ''}
-      <div class="sub">${p.saidas} cidade${p.saidas === 1 ? '' : 's'} de saída${p.deSP ? ` · de ${esc(p.deSP.origem)} a partir de R$ ${reais(p.deSP.preco)}` : ''}</div>
-      <div class="pesq tab">🔎 ${p.precoSite ? 'Preços do nosso site conferidos em' : 'Preços pesquisados em'} ${dataHora(p.pesquisado)}</div>
+      <div class="sub">${p.saidas} cidade${p.saidas === 1 ? '' : 's'} de saída${p.ativa && p.deSP ? ` · de ${esc(p.deSP.origem)} a partir de R$ ${reais(p.deSP.preco)}` : ''}</div>
+      ${p.ativa ? `<div class="pesq tab">🔎 ${p.precoSite ? 'Preços do nosso site conferidos em' : 'Preços pesquisados em'} ${dataHora(p.pesquisado)}</div>` : ''}
     </div>
-    <div class="preco-box">
+    ${p.ativa ? `<div class="preco-box">
       <div class="apartir">${p.ativa ? 'a partir de' : 'era a partir de'}</div>
       <div class="preco tab"><small>R$</small>${reais(p.aPartirDe)}</div>
       <div class="det">${p.precoSite ? 'por pessoa · ida e volta com taxas' : 'por pessoa ida e volta sem taxas*'}</div>
-      <span class="ver">${p.ativa ? 'Ver datas e preços' : 'Ver como estava'}</span>
-    </div>
+      <span class="ver">Ver datas e preços</span>
+    </div>` : `<div class="preco-box"><div class="apartir">promoção encerrada</div><span class="ver">Ver passagens de hoje</span></div>`}
   </a>`).join('');
 document.getElementById('vazio').hidden = promos.length > 0;
 document.getElementById('paginas').innerHTML = total < 2 ? '' : Array.from({ length: total }, (_, i) => i + 1)
   .map((n) => `<a href="?pagina=${n}"${n === pagina ? ' aria-current="page"' : ''}>${n}</a>`).join('');
 document.getElementById('rodape').innerHTML = `
-  <div>Cada promoção fica ativa por até 4 dias e tem os preços pesquisados de novo todo dia de manhã; depois disso fica aqui como encerrada, com a data da última pesquisa. Promoção de "só hoje" vale apenas no dia em que saiu.</div>
+  <div>Cada promoção fica ativa por até 4 dias e tem os preços pesquisados de novo todo dia de manhã; depois disso fica aqui como encerrada, sem os preços antigos, com o link para ver as passagens de hoje. Promoção de "só hoje" vale apenas no dia em que saiu.</div>
   <div>Preços por pessoa, ida e volta, na data e hora da pesquisa. Onde diz "preços do nosso site", o valor já tem as taxas e foi conferido no nosso site de compra. Nos demais, *taxas de embarque não incluídas: o valor final, com as taxas, aparece no nosso site na hora da compra. Passagem aérea muda de preço a qualquer momento: o valor final é o que aparecer na hora da compra. Sujeito a disponibilidade.</div>
   <div>Mesquita Turismo · WhatsApp ${DADOS.atendentes.map((a) => `${esc(a.nome)} ${esc(a.exibicao)}`).join(' · ')}</div>`;
 </script>
