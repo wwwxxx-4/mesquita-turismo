@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Passagens para Cuiabá e Bonito em promoção · Mesquita Turismo</title>
+<meta name="description" content="Promoções de passagens aéreas ida e volta com preço conferido no dia. Compre no site da Mesquita Turismo ou fale com a gente no WhatsApp.">
+<meta property="og:title" content="Passagens para Cuiabá e Bonito em promoção · Mesquita Turismo">
+<meta property="og:description" content="Passagens ida e volta em promoção, com preço por pessoa conferido no dia.">
+<meta property="og:image" content="https://www.mesquitaturismo.com.br/passagens-em-oferta/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.mesquitaturismo.com.br/promocoes-passagens/cuiaba-e-bonito-1411/">
+<link rel="canonical" href="https://www.mesquitaturismo.com.br/promocoes-passagens/cuiaba-e-bonito-1411/">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/identidade.css">
+<style>
+/* Mesma linguagem da /passagens-em-oferta/: azul do logo, preco em azul,
+   cards brancos sem sombra. Aqui nao ha comparacao com outro site: so o
+   preco da Mesquita, conferido no dia, e o link para comprar. */
+:root {
+  --azul: #1072B9; --azul-claro: #55B5E5; --azul-bg: #EAF5FC; --noite: #0B2440;
+  --papel: #F5F8FB; --folha: #FFFFFF; --tinta: #10233B; --tinta-2: #55657C; --linha: #DCE5EE;
+  --verde: #138A55; --verde-bg: #E3F5EC;
+  --cond: 'Barlow Condensed', 'Arial Narrow', sans-serif; --txt: 'Barlow', 'Segoe UI', system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 16px/1.5 var(--txt); }
+a { color: inherit; }
+.tab { font-variant-numeric: tabular-nums; }
+.topo { position: sticky; top: 0; z-index: 10; background: var(--folha); border-bottom: 1px solid var(--linha); padding: calc(env(safe-area-inset-top, 0px) + 10px) 16px 10px; }
+.topo .in { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.topo img { height: 44px; display: block; }
+.atendentes { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.btn-whats { display: inline-flex; align-items: center; gap: 8px; background: #1FAF38; color: #fff; text-decoration: none; font-weight: 700; border-radius: 999px; padding: 8px 14px; white-space: nowrap; font-size: 15px; }
+.btn-whats small { font-weight: 500; opacity: .92; }
+.btn-whats svg, .zap svg { width: 18px; height: 18px; fill: currentColor; flex: none; }
+.pagina { max-width: 1160px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 48px; }
+.hero h1 { font: 800 clamp(34px, 6vw, 58px)/1 var(--cond); margin: 0; text-wrap: balance; color: var(--noite); }
+.hero h1 em { font-style: normal; color: var(--azul); }
+.hero p { color: var(--tinta-2); margin: 10px 0 0; max-width: 70ch; }
+.selo { display: inline-flex; gap: 6px; align-items: center; background: var(--verde-bg); color: var(--verde); font-weight: 700; font-size: 14px; border-radius: 999px; padding: 5px 12px; margin-top: 12px; }
+.filtros { display: grid; gap: 10px; margin-top: 22px; }
+.linha-f { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.linha-f > span { font: 700 13px var(--cond); letter-spacing: .12em; text-transform: uppercase; color: var(--tinta-2); margin-right: 4px; }
+.chip { border: 1px solid var(--linha); background: var(--folha); color: var(--tinta); border-radius: 999px; padding: 6px 13px; font: 500 14px var(--txt); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--azul); border-color: var(--azul); color: #fff; }
+.contagem { color: var(--tinta-2); font-size: 14px; }
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 16px; margin-top: 18px; }
+.card { background: var(--folha); border: 1px solid var(--linha); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.faixa { background: linear-gradient(120deg, var(--noite), var(--azul)); color: #fff; padding: 16px 16px 14px; }
+.faixa h2 { font: 800 32px/1 var(--cond); margin: 0; }
+.faixa .rota { font-size: 14px; opacity: .9; margin-top: 4px; }
+.corpo { padding: 14px 16px 16px; display: grid; gap: 10px; flex: 1; }
+.voo { font-size: 14px; display: grid; gap: 2px; }
+.voo b { font-weight: 600; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { background: var(--azul-bg); color: var(--azul); font-size: 12px; font-weight: 600; border-radius: 999px; padding: 2px 9px; }
+.precos { border-top: 1px dashed var(--linha); padding-top: 10px; margin-top: auto; }
+.preco { font: 800 40px/1 var(--cond); color: var(--azul); }
+.preco small { font-size: 20px; margin-right: 3px; }
+.det { font-size: 12px; color: var(--tinta-2); }
+.parc { font-size: 13px; margin-top: 3px; }
+.acoes { display: grid; gap: 8px; }
+.comprar { display: flex; align-items: center; justify-content: center; text-decoration: none; background: var(--azul); color: #fff; font-weight: 700; border-radius: 10px; padding: 11px 8px; }
+.comprar:hover { background: var(--noite); }
+.zaps { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+.zap { display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; border: 1px solid #1FAF38; color: #13852A; font-weight: 700; border-radius: 10px; padding: 9px 8px; font-size: 14px; }
+/* calendario de datas (paginas de um post com DADOS.calendario) */
+.grade:has(.cal) { align-items: start; } /* abrir o calendario de um cartao nao estica os vizinhos */
+/* o calendario E o botao principal do cartao (pedido dele em 14/10: estava escondido) */
+.logo-cia { width: 34px; height: 34px; object-fit: contain; border-radius: 6px; vertical-align: middle; margin-right: 8px; background: #fff; border: 1px solid var(--linha); padding: 2px; }
+.cal-dia { display: inline-flex; align-items: center; }
+.cal summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--azul); color: #fff; font-weight: 700; font-size: 16px; border-radius: 10px; padding: 12px 10px; }
+.cal summary::-webkit-details-marker { display: none; }
+.cal summary:hover { background: var(--noite); }
+.cal summary .seta { transition: transform .2s; }
+.cal[open] summary { background: var(--noite); }
+.cal[open] summary .seta { transform: rotate(180deg); }
+.cal .dica { font-size: 13px; color: var(--tinta-2); margin: 8px 2px 0; }
+.cal .mes { font: 700 13px var(--cond); letter-spacing: .1em; text-transform: uppercase; color: var(--tinta-2); margin: 12px 0 4px; }
+.cal .dias { display: grid; gap: 4px; max-height: 320px; overflow: auto; }
+.cal a { display: flex; justify-content: space-between; gap: 8px; text-decoration: none; font-size: 13px; padding: 6px 9px; border-radius: 8px; background: var(--papel); }
+.cal a:hover { background: var(--azul-bg); }
+.cal a b { font-weight: 700; white-space: nowrap; }
+.cal a.barato b { color: var(--verde); }
+.apartir { font-size: 13px; color: var(--tinta-2); }
+.destaques { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.destaques span { background: var(--noite); color: #fff; font-weight: 700; font-size: 14px; border-radius: 999px; padding: 6px 13px; }
+.destaques span.forte { background: #B8860B; }
+.aviso-classe { margin-top: 12px; background: #FFF8E1; border: 1px solid #F0D27A; color: #5C4400; border-radius: 12px; padding: 10px 14px; font-size: 14px; max-width: 75ch; }
+.vazio { padding: 32px; text-align: center; color: var(--tinta-2); }
+.rodape { margin-top: 36px; border-top: 1px solid var(--linha); padding-top: 16px; color: var(--tinta-2); font-size: 13px; display: grid; gap: 8px; max-width: 90ch; }
+@media (max-width: 560px) { .topo img { height: 30px; } .btn-whats small { display: none; } .btn-whats { padding: 7px 11px; font-size: 14px; } }
+</style>
+</head>
+<body>
+<header class="topo"><div class="in">
+  <a href="/" title="Página inicial da Mesquita Turismo"><img src="/passagens-em-oferta/logo.png" alt="Mesquita Turismo"></a>
+  <div class="atendentes" id="atendentes"></div>
+</div></header>
+
+<main class="pagina"><!--encerrada--><!--encerrada-v2--><!--encerrada-rotas:-->
+  <section class="hero">
+    <h1>Passagens para <em>Cuiabá e Bonito</em></h1>
+    <div style="background:#FFF4E5;border:1px solid #F5C77E;color:#7A4B00;border-radius:12px;padding:14px 18px;margin:18px 0;font-weight:600;font-size:17px;line-height:1.45">
+      Esta promoção já foi encerrada em 14/11/2026. As tarifas promocionais não estão mais disponíveis.
+    </div>
+    <p style="font-size:17px;line-height:1.5;margin:0 0 18px">Veja as passagens de hoje no nosso site de compra, ou chame a gente no WhatsApp que cotamos para você.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px">
+      <a href="https://www.comprarviagem.com.br/mesquitaturismo" target="_blank" rel="noopener" style="background:#1072B9;color:#fff;text-decoration:none;font-weight:700;padding:14px 22px;border-radius:12px;font-size:17px">Ver as passagens de hoje</a>
+      <a href="https://wa.me/5511953967095?text=Ol%C3%A1!%20Vi%20a%20promo%C3%A7%C3%A3o%20de%20passagens%20para%20Cuiab%C3%A1%20e%20Bonito%20no%20site%2C%20que%20j%C3%A1%20encerrou.%20Pode%20me%20passar%20os%20valores%20de%20hoje%3F" target="_blank" rel="noopener" style="background:#25D366;color:#fff;text-decoration:none;font-weight:700;padding:14px 22px;border-radius:12px;font-size:17px">Falar no WhatsApp (11) 95396-7095</a>
+    </div>
+    <a href="/promocoes-passagens/" style="color:#1072B9;font-weight:600">← Veja as promoções que estão ativas</a>
+  </section>
+</main>
+</body>
+</html>
