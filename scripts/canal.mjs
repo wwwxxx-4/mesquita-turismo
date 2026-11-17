@@ -10,7 +10,8 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SKIP = new Set(['node_modules', '.git', '.vercel', 'scripts']);
-const TAG = '<script defer src="/assets/canal.js"></script>\n';
+// 16/11: junto vai a ponte com a Mesvia (assets/mesvia.js), depois do canal (usa a faixa como referência)
+const TAG = '<script defer src="/assets/canal.js"></script>\n<script defer src="/assets/mesvia.js"></script>\n';
 
 async function* htmlFiles(dir) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
@@ -24,7 +25,7 @@ async function* htmlFiles(dir) {
 let added = 0;
 for await (const file of htmlFiles(ROOT)) {
   const html = await readFile(file, 'utf8');
-  if (html.includes('/assets/canal.js') || !/<\/body>/i.test(html)) continue;
+  if (html.includes('/assets/mesvia.js') || !/<\/body>/i.test(html)) continue;
   await writeFile(file, html.replace(/<\/body>/i, TAG + '</body>'), 'utf8');
   added++;
 }
